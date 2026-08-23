@@ -3244,7 +3244,8 @@ Contact Block (Independent)
 /* MOBILE <= 800px */
 @media (max-width: 800px) {
   .site-footer {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
   }  
   .footer-content {
     padding-top: calc(var(--menu-top-h) * 2 + var(--global-spacing-lr));
@@ -3316,6 +3317,8 @@ Contact Block (Independent)
 @media (max-width: 640px) {
   .site-footer {
     height: 100vh;
+    min-height: 100vh;
+    height: auto;
   }  
   .footer-content {
     padding-top: calc(var(--menu-top-h) * 2 + var(--global-spacing-lr));
@@ -3535,6 +3538,8 @@ Contact Block (Independent)
 @media (max-height: 960px) {
   .site-footer {
     height: 100vh;
+    min-height: 100vh;
+    height: auto;
   }
 }
 
