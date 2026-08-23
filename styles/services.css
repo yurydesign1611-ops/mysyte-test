@@ -1,0 +1,202 @@
+/* ------------------------------------------------------------------------------- */
+/* SERVICES INTRO */
+/* ------------------------------------------------------------------------------- */
+
+.services-intro {
+  width: 100%;
+  background-color: var(--OFFWHITE);
+  padding-top: 12vh;
+  padding-bottom: 12vh;
+  padding-left: var(--global-spacing-lr);
+  padding-right: var(--global-spacing-lr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-intro-content {
+  text-align: center;
+  width: 100%;
+  max-width: var(--scale-960);
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+}
+
+.services-intro-heading {
+  font-family: var(--font-sec);
+  font-size: var(--font-32);
+  line-height: var(--font-32-lh);
+  letter-spacing: var(--font-32-ls);
+  color: var(--COFFEE);
+  margin-bottom: var(--scale-56);
+}
+
+/* ===== Large Screens ===== */
+
+@media only screen and (min-width: 4096px) {
+  .services-intro {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+  }
+  .services-intro-heading {
+    font-size: var(--font-64);
+    line-height: var(--font-64-lh);
+    letter-spacing: var(--font-64-ls);
+    margin-bottom: var(--scale-80);
+  }
+  .services-intro-content {
+    text-align: center;
+    width: 100%;
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 4096px) {
+  .services-intro {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+  }
+  .services-intro-heading {
+    font-size: var(--font-48);
+    line-height: var(--font-48-lh);
+    letter-spacing: var(--font-48-ls);
+    margin-bottom: 5vh;
+  }
+  .services-intro-content {
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 2560px) {
+  .services-intro {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+  }
+  .services-intro-content {
+    width: 60vw;
+  }
+  .services-intro-heading {
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls);
+    margin-bottom: 5vh;
+  }
+}
+
+@media only screen and (max-width: 1920px) {
+  .services-intro {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+  }
+  .services-intro-heading {
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
+    margin-bottom: 5vh;
+  }
+  .services-intro-content {
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .services-intro {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    padding-bottom: 20vh;
+  }
+  .services-intro-heading {
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
+    margin-bottom: 5vh;
+  }
+  .services-intro-content {
+    width: 66vw;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .services-intro {
+    padding-top: 12vh;
+    padding-bottom: 12vh;
+  }
+  .services-intro-heading {
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
+    margin-bottom: 6vh;
+  }
+  .services-intro-content {
+    width: 75vw;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .services-intro-content {
+    text-align: left;          /* ← left-align text */
+    align-items: flex-start;   /* ← left-align flex children */
+    width: 100%;               /* ← full width for left alignment */
+  }
+  .services-intro-heading {
+    text-align: left;          /* ← ensure heading text is left-aligned */
+  }
+  .services-intro .supertitle {
+    text-align: left;          /* ← left-align supertitle */
+    width: 100%;
+  }
+  .services-intro-btn {
+    align-self: flex-start;    /* ← left-align button */
+  }
+  .services-intro-content {
+    width: 75vw;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .services-intro {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
+  .services-intro-heading {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+    margin-bottom: 3vh;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .services-intro {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
+  .services-intro-heading {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+    margin-bottom: 4vh;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .services-intro {
+    padding-top: 12vh;
+    padding-bottom: 12vh;
+  }
+  .services-intro-heading {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+    margin-bottom: 5vh;
+  }
+}
+
+/* Turning off full width image on mobile */ 
+
+@media only screen and (max-width: 960px) {
+  .full-width-image {
+    display: none;
+  }
+}
