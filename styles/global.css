@@ -289,11 +289,11 @@ Colors
   --WINDSWEPT: #DBD3C5;
   --SANDSTONE: #EBE6DF;
   --OFFWHITE: #FFFEFC;
-  --FEATHER: #FAF8F5;
+  --FEATHER: #F5F2ED;
 }
 /* Neutral */
 :root {
-  --GREY: #ADA9A3;
+  --GREY: #A3A09B;
   --STEELGREY: #6C6E70;
   --STORM: #373B40;
 }
@@ -318,25 +318,25 @@ Design details
 */
 /* Borders */
 :root {
-  --border-1: calc(var(--scale-1) * 1);
-  --border-2: calc(var(--scale-1) * 2);
-  --border-3: calc(var(--scale-1) * 3);
-  --border-4: calc(var(--scale-1) * 4);
+  --border-1: calc(var(--scale-1) * 1.25);
+  --border-2: calc(var(--scale-1) * 2.25);
+  --border-3: calc(var(--scale-1) * 3.25);
+  --border-4: calc(var(--scale-1) * 4.25);
 }
-@media only screen and (max-width: 540px) {
-  :root {
-    --border-1: calc(var(--scale-1) * 1.3);
-    --border-2: calc(var(--scale-1) * 2.3);
-    --border-3: calc(var(--scale-1) * 3.3);
-    --border-4: calc(var(--scale-1) * 4.3);
-  }
-}
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 640px) {
   :root {
     --border-1: calc(var(--scale-1) * 1.5);
     --border-2: calc(var(--scale-1) * 2.5);
     --border-3: calc(var(--scale-1) * 3.5);
     --border-4: calc(var(--scale-1) * 4.5);
+  }
+}
+@media only screen and (max-width: 480px) {
+  :root {
+    --border-1: calc(var(--scale-1) * 1.75);
+    --border-2: calc(var(--scale-1) * 2.75);
+    --border-3: calc(var(--scale-1) * 3.75);
+    --border-4: calc(var(--scale-1) * 4.75);
   }
 }
 
@@ -931,7 +931,7 @@ UI components
     font-size: var(--font-16);
     line-height: var(--font-16-lh);
     letter-spacing: var(--font-16-ls-ac);
-    margin-bottom: var(--scale-12);
+    padding-bottom: var(--scale-10);
   }
 }
 
@@ -942,7 +942,7 @@ UI components
     font-size: var(--font-14);
     line-height: var(--font-14-lh);
     letter-spacing: var(--font-14-ls-ac);
-    margin-bottom: var(--scale-10);
+    padding-bottom: var(--scale-8);
   }
 }
 
@@ -952,7 +952,7 @@ UI components
     font-size: var(--font-14);
     line-height: var(--font-14-lh);
     letter-spacing: var(--font-14-ls-ac);
-    margin-bottom: var(--scale-10);
+    padding-bottom: var(--scale-8);
   }
 }
 
@@ -962,7 +962,7 @@ UI components
     font-size: var(--font-12);
     line-height: var(--font-12-lh);
     letter-spacing: var(--font-12-ls-ac);
-    margin-bottom: var(--scale-8);
+    padding-bottom: var(--scale-8);
   }
 }
 
@@ -1278,18 +1278,7 @@ UI components
 
 @media only screen and (max-width: 640px) {
   :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-56));
-  }
-  :root {
-    --menu-font-size: var(--font-12);
-    --menu-line-height: var(--font-12-lh);
-    --menu-letter-spacing: var(--font-12-ls-ac);
-  }
-}
-
-@media only screen and (max-width: 560px) {
-  :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-56));
+    --menu-top-h: calc(var(--safe-top) + var(--scale-64));
   }
   :root {
     --menu-font-size: var(--font-14);
@@ -1298,20 +1287,31 @@ UI components
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 560px) {
   :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-56));
+    --menu-top-h: calc(var(--safe-top) + var(--scale-80));
   }
   :root {
-    --menu-font-size: var(--font-12);
-    --menu-line-height: var(--font-12-lh);
-    --menu-letter-spacing: var(--font-12-ls-ac);
+    --menu-font-size: var(--font-16);
+    --menu-line-height: var(--font-16-lh);
+    --menu-letter-spacing: var(--font-16-ls-ac);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  :root {
+    --menu-top-h: calc(var(--safe-top) + var(--scale-80));
+  }
+  :root {
+    --menu-font-size: var(--font-14);
+    --menu-line-height: var(--font-14-lh);
+    --menu-letter-spacing: var(--font-14-ls-ac);
   }
 }
 
 @media only screen and (max-width: 440px) {
   :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-56));
+    --menu-top-h: calc(var(--safe-top) + var(--scale-80));
   }
   :root {
     --menu-font-size: var(--font-14); /* controls icon size at this breakpoint */ 
@@ -2478,8 +2478,8 @@ Modal quick contact window
 @media only screen and (max-width: 800px) {
   .contact-popup {
     width: 100%;
-    height: calc(100vh - (var(--safe-top) + var(--menu-top-h)));
-    margin-top: calc(var(--safe-top) + var(--menu-top-h));
+    height: calc(100vh - var(--menu-top-h));
+    margin-top: var(--menu-top-h);
     padding: var(--global-spacing-lr) var(--global-spacing-lr) var(--scale-96);
     border-bottom: none;
     border-radius: 0;
@@ -2561,7 +2561,7 @@ Modal quick contact window
 /* ===== For very small heights (e.g., landscape mobile) ===== */
 @media (max-height: 560px) and (max-width: 800px) {
   .contact-popup {
-    height: calc(100vh - (var(--safe-top) + var(--menu-top-h)));
+    height: 100%;
     padding-top: var(--scale-16);
     padding-bottom: var(--scale-48);
   }
