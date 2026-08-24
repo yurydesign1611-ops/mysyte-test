@@ -1267,18 +1267,18 @@ UI components
 
 @media only screen and (max-width: 960px) {
   :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-72));
+    --menu-top-h: calc(var(--safe-top) + var(--scale-80));
   }
   :root {
-    --menu-font-size: var(--font-14);
-    --menu-line-height: var(--font-14-lh);
-    --menu-letter-spacing: var(--font-14-ls-ac);
+    --menu-font-size: var(--font-16);
+    --menu-line-height: var(--font-14-16);
+    --menu-letter-spacing: var(--font-14-16-ac);
   }
 }
 
 @media only screen and (max-width: 640px) {
   :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-72));
+    --menu-top-h: calc(var(--safe-top) + var(--scale-80));
   }
   :root {
     --menu-font-size: var(--font-14);
@@ -1289,7 +1289,7 @@ UI components
 
 @media only screen and (max-width: 560px) {
   :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-96));
+    --menu-top-h: calc(var(--safe-top) + var(--scale-80));
   }
   :root {
     --menu-font-size: var(--font-20);
@@ -1300,10 +1300,10 @@ UI components
 
 @media only screen and (max-width: 480px) {
   :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-96));
+    --menu-top-h: calc(var(--safe-top) + var(--scale-80));
   }
   :root {
-    --menu-font-size: var(--font-20);
+    --menu-font-size: var(--font-16);
     --menu-line-height: var(--font-20-lh);
     --menu-letter-spacing: var(--font-20-ls-ac);
   }
@@ -1314,7 +1314,7 @@ UI components
     --menu-top-h: calc(var(--safe-top) + var(--scale-80));
   }
   .nav-link {
-    font-size: var(--font-20);
+    font-size: var(--font-16);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls-ac);
   }
