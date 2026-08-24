@@ -1300,12 +1300,12 @@ UI components
 
 @media only screen and (max-width: 480px) {
   :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-80));
+    --menu-top-h: calc(var(--safe-top) + var(--scale-96));
   }
   :root {
-    --menu-font-size: var(--font-16);
-    --menu-line-height: var(--font-16-lh);
-    --menu-letter-spacing: var(--font-16-ls-ac);
+    --menu-font-size: var(--font-20);
+    --menu-line-height: var(--font-20-lh);
+    --menu-letter-spacing: var(--font-20-ls-ac);
   }
 }
 
@@ -1314,9 +1314,9 @@ UI components
     --menu-top-h: calc(var(--safe-top) + var(--scale-80));
   }
   .nav-link {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls-ac);
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls-ac);
   }
 }
 
