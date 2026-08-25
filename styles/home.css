@@ -264,8 +264,8 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 .home-production {
   width: 100%;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: calc(var(--global-spacing-lr) + var(--menu-icon-1-width) + var(--menu-icon-spacing));
+  padding-right: calc(var(--global-spacing-lr) + var(--menu-icon-2-width) + var(--menu-icon-spacing));
   background-color: var(--OFFWHITE);
 }
 
@@ -499,7 +499,7 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media (max-width: 960px) {
   .home-production-content {
-    width: 75vw;
+    width: 100%;
     padding-top: var(--scale-96);
   }
   .home-production-heading {
@@ -520,7 +520,7 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media only screen and (max-width: 640px) {
   .home-production-content {
-    width: 75vw;
+    width: 100%;
     padding-top: var(--scale-72);
   }
   .home-production-heading {
@@ -541,7 +541,6 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 @media only screen and (max-width: 480px) {
   .home-production-content {
     width: 100%;
-
     padding-top: var(--scale-72);
   }
   .home-production-heading {
@@ -626,3 +625,22 @@ When parallax IS implemented, the image will move vertically
 within the container, revealing the hidden parts.
 */
 
+
+
+
+/* ============================================================ */
+/* ===== PARALLAX  EFFECT ===== */
+/* ============================================================ */
+
+.home-production-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 133.33%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  will-change: transform;          /* ← OPTIMIZATION: hints browser to prepare for animation */
+  transition: transform 0.1s ease-out;  /* ← OPTIONAL: smooths the movement slightly */
+}
