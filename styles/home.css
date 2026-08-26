@@ -1,4 +1,3 @@
-
 /* 
 ===============================================================================
 HOME CSS. KVARTZ WEBSITE since 21.05.2026
@@ -7,9 +6,9 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 /* ------------------------------------------------------------------------------- */ 
 /* HERO */
-
 /* Video hero in global.css */ 
 /* ------------------------------------------------------------------------------- */ 
+
 /* INTRO */
 
 .home-intro {
@@ -46,7 +45,6 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 }
 
 .home-intro-description {
-  /* TURNED OFF*/ 
   display: none;
   font-family: var(--font-pri);
   font-size: var(--font-16);
@@ -56,7 +54,6 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
   text-decoration: none;
 }
 
-/* custom br */ 
 .mobile-only {
   display: none;
 }
@@ -70,6 +67,8 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 .round-button {
   width: var(--scale-56);
 }
+
+/* ===== Intro Media Queries ===== */
 
 @media only screen and (min-width: 4096px) {
   .home-intro {
@@ -89,7 +88,6 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
     margin-bottom: var(--scale-24);
   }
 }
-
 
 @media only screen and (max-width: 4096px) {
   .home-intro {
@@ -254,393 +252,4 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
   .desktop-only {
     display: none;
   }
-}
-
-
-
-/* ------------------------------------------------------------------------------- */
-/* HOME PRODUCTION BLOCK (with parallax-ready images) */
-/* ------------------------------------------------------------------------------- */
-
-.home-production {
-  width: 100%;
-  padding-left: calc(var(--global-spacing-lr) + var(--menu-icon-1-width) + var(--menu-icon-spacing));
-  padding-right: calc(var(--global-spacing-lr) + var(--menu-icon-2-width) + var(--menu-icon-spacing));
-  background-color: var(--OFFWHITE);
-}
-
-/* ===== Image Container ===== */
-
-.home-production-image {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Desktop: 16:9 container, 4:3 image (130% height for parallax) */
-.home-production-image {
-  aspect-ratio: 16 / 9;
-}
-
-.home-production-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 133.33%;         /* 4:3 image relative to 16:9 container = 133.33% */
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-/* ===== Content ===== */
-
-.home-production-content {
-  width: 50vw;
-  max-width: var(--scale-960);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-top: var(--scale-128);
-  padding-bottom: var(--scale-160);
-}
-
-/* ===== Heading ===== */
-
-.home-production-heading {
-  width: 100%;
-  font-family: var(--font-sec);
-  font-size: var(--font-20);
-  line-height: var(--font-20-lh);
-  letter-spacing: var(--font-20-ls-ac);
-  color: var(--GOLD);
-  text-transform: uppercase;
-  text-decoration: none;
-  margin-bottom: var(--scale-48);
-  max-width: 100%;             /* ← prevents overflow on small screens */
-  padding-bottom: var(--scale-12);  /* ← padding 24 */
-  border-bottom: var(--border-1) solid var(--GOLD);  /* ← border like headings */
-}
-
-/* ===== Text ===== */
-
-.home-production-text {
-  font-family: var(--font-pri);
-  font-size: var(--font-20);
-  line-height: var(--font-20-lh);
-  letter-spacing: var(--font-20-ls);
-  text-decoration: none;
-  color: var(--NOIR);
-  margin-bottom: var(--scale-72);
-}
-
-.home-production-text p {
-  margin-bottom: var(--scale-12);
-}
-
-.home-production-text p:last-child {
-  margin-bottom: 0;
-}
-
-/* ===== Button ===== */
-
-.home-production-btn {
-  align-self: flex-start;
-}
-
-/* ============================================================ */
-/* ===== MOBILE: <960px ===== */
-/* ============================================================ */
-
-@media only screen and (max-width: 960px) {
-
-  .home-production {
-    padding-left: calc(var(--global-spacing-lr) + var(--menu-icon-1-width) + var(--menu-icon-spacing));
-    padding-right: calc(var(--global-spacing-lr) + var(--menu-icon-2-width) + var(--menu-icon-spacing));
-  }
-
-  /* Mobile: 4:5 container, 112.5% height (subtle parallax) */
-  .home-production-image {
-    aspect-ratio: 4 / 5;           /* 4:5 container (vertical) */
-  }
-
-  .home-production-image img {
-    height: 112.5%;                /* +12.5% for subtle parallax on mobile */
-  }
-
-  .home-production-content {
-    width: 100%;
-  }
-
-  .home-production-heading {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls-ac);
-  }
-
-  .home-production-text {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls);
-  }
-}
-
-/* ============================================================ */
-/* ===== FONT SCALING (all breakpoints) ===== */
-/* ============================================================ */
-
-/* ----- min-width: 4096px ----- */
-
-@media only screen and (min-width: 4096px) {
-  .home-production-heading {
-    font-size: var(--font-40);
-    line-height: var(--font-40-lh);
-    letter-spacing: var(--font-40-ls-ac);
-  }
-  .home-production-text {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls);
-    margin-bottom: var(--scale-96);
-  }
-}
-
-/* ----- max-width: 4096px ----- */
-
-@media only screen and (max-width: 4096px) {
-  .home-production-heading {
-    font-size: var(--font-40);
-    line-height: var(--font-40-lh);
-    letter-spacing: var(--font-40-ls-ac);
-  }
-  .home-production-text {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls);
-    margin-bottom: var(--scale-96);
-  }
-}
-
-/* ----- max-width: 2560px ----- */
-
-@media only screen and (max-width: 2560px) {
-  .home-production-content {
-    width: 50vw;
-    padding-top: var(--scale-160);
-  }
-
-  .home-production-heading {
-    font-size: var(--font-32);
-    line-height: var(--font-32-lh);
-    letter-spacing: var(--font-32-ls-ac);
-    padding-bottom: var(--scale-24);
-    margin-bottom: var(--scale-64);
-  }
-  .home-production-text {
-    font-size: var(--font-32);
-    line-height: var(--font-32-lh);
-    letter-spacing: var(--font-32-ls);
-    margin-bottom: var(--scale-96);
-  }
-}
-
-/* ----- max-width: 1920px ----- */
-
-@media only screen and (max-width: 1920px) {
-  .home-production-heading {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls-ac);
-    padding-bottom: var(--scale-16);
-    margin-bottom: var(--scale-48);
-  }
-  .home-production-text {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls);
-    margin-bottom: var(--scale-96);
-  }
-}
-
-/* ----- max-width: 1600px ----- */
-
-@media only screen and (max-width: 1600px) {
-  .home-production-heading {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls-ac);
-    margin-bottom: var(--scale-48);
-  }
-  .home-production-text {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls);
-    margin-bottom: var(--scale-80);
-  }
-}
-
-/* ----- max-width: 1280px ----- */
-
-@media only screen and (max-width: 1280px) {
-  .home-production-heading {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls-ac);
-    padding-bottom: var(--scale-12);
-  }
-  .home-production-text {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls);
-    margin-bottom: var(--scale-72);
-  }
-}
-
-@media (max-width: 960px) {
-  .home-production-content {
-    width: 100%;
-    padding-top: var(--scale-96);
-  }
-  .home-production-heading {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls-ac);
-  }
-  .home-production-text {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls);
-    margin-bottom: var(--scale-64);
-  }
-}
-
-
-/* ----- max-width: 640px ----- */
-
-@media only screen and (max-width: 640px) {
-  .home-production-content {
-    width: 100%;
-    padding-top: var(--scale-72);
-  }
-  .home-production-heading {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls-ac);
-    margin-bottom: var(--scale-32);
-  }
-  .home-production-text {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls);
-    margin-bottom: var(--scale-56);
-  }  
-}
-/* ----- max-width: 480px ----- */
-
-@media only screen and (max-width: 480px) {
-  .home-production-content {
-    width: 100%;
-    padding-top: var(--scale-72);
-  }
-  .home-production-heading {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls-ac);
-    margin-bottom: var(--scale-32);
-  }
-  .home-production-text {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls);
-    margin-bottom: var(--scale-56);
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .home-production {
-    padding-left: var(--global-spacing-lr);
-    padding-right: var(--global-spacing-lr);
-  }
-  .home-production-content {
-    width: 100%;
-    padding-top: var(--scale-72);
-  }
-  .home-production-heading {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls-ac);
-    margin-bottom: var(--scale-32);
-  }
-  .home-production-text {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls);
-    margin-bottom: var(--scale-56);
-  }
-}
-/* ----- max-width: 320px ----- */
-
-@media only screen and (max-width: 320px) {
-  .home-production-content {
-    width: 100%;
-    padding-top: var(--scale-72);
-  }
-  .home-production-heading {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls-ac);
-    margin-bottom: var(--scale-32);
-  }
-  .home-production-text {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls);
-    margin-bottom: var(--scale-56);
-  }
-  .home-production-btn {
-    align-self: flex-start;
-    margin: 0;
-    padding:
-  }
-}
-
-/* ============================================================ */
-/* ===== FALLBACK (when parallax is not implemented) ===== */
-/* ============================================================ */
-
-/*
-If parallax is NOT implemented yet, the image will still render
-correctly because:
-- `object-fit: cover` ensures the image fills the container
-- The image is cropped to fit the container's aspect ratio
-- On desktop (16:9 container): image crops to 16:9
-- On mobile (4:5 container): image crops to 4:5
-
-The extra height (133.33% desktop, 112.5% mobile) is currently
-NOT being used for movement — it just makes the image taller than
-the container, but `object-fit: cover` crops it down.
-
-When parallax IS implemented, the image will move vertically
-within the container, revealing the hidden parts.
-*/
-
-
-
-
-/* ============================================================ */
-/* ===== PARALLAX  EFFECT ===== */
-/* ============================================================ */
-
-.home-production-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 133.33%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  will-change: transform;          /* ← OPTIMIZATION: hints browser to prepare for animation */
-  transition: transform 0.1s ease-out;  /* ← OPTIONAL: smooths the movement slightly */
 }

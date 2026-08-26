@@ -29,7 +29,7 @@
   line-height: var(--font-32-lh);
   letter-spacing: var(--font-32-ls);
   color: var(--COFFEE);
-  margin-bottom: var(--scale-56);
+  margin-bottom: var(--scale-72);
 }
 
 /* ===== Large Screens ===== */
@@ -80,7 +80,7 @@
     font-size: var(--font-32);
     line-height: var(--font-32-lh);
     letter-spacing: var(--font-32-ls);
-    margin-bottom: 5vh;
+    margin-bottom: 7vh;
   }
 }
 
@@ -93,7 +93,7 @@
     font-size: var(--font-24);
     line-height: var(--font-24-lh);
     letter-spacing: var(--font-24-ls);
-    margin-bottom: 5vh;
+    margin-bottom: 7vh;
   }
   .services-intro-content {
     width: 60vw;
@@ -110,7 +110,7 @@
     font-size: var(--font-24);
     line-height: var(--font-24-lh);
     letter-spacing: var(--font-24-ls);
-    margin-bottom: 5vh;
+    margin-bottom: var(--scale-64);
   }
   .services-intro-content {
     width: 66vw;
@@ -119,14 +119,14 @@
 
 @media only screen and (max-width: 960px) {
   .services-intro {
-    padding-top: 12vh;
-    padding-bottom: 12vh;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
   }
   .services-intro-heading {
     font-size: var(--font-24);
     line-height: var(--font-24-lh);
     letter-spacing: var(--font-24-ls);
-    margin-bottom: 6vh;
+    margin-bottom: 7vh;
   }
   .services-intro-content {
     width: 75vw;
@@ -156,34 +156,34 @@
 
 @media only screen and (max-width: 640px) {
   .services-intro {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
   }
   .services-intro-heading {
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
-    margin-bottom: 3vh;
+    margin-bottom: 5vh;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .services-intro {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: 15vh;
+    padding-bottom: 15h;
   }
   .services-intro-heading {
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
-    margin-bottom: 4vh;
+    margin-bottom: 5vh;
   }
 }
 
 @media only screen and (max-width: 440px) {
   .services-intro {
-    padding-top: 12vh;
-    padding-bottom: 12vh;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
   }
   .services-intro-heading {
     font-size: var(--font-20);

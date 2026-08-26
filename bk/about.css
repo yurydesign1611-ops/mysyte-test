@@ -112,7 +112,7 @@
   .about-text-body {
     font-size: var(--font-24);
     line-height: var(--font-24-lh);
-    letter-spacing: var(--font-24-ls);
+    letter-spacing: var(--font-24-ls); 
   }
 }
 

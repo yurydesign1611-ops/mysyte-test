@@ -106,17 +106,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// ===== PARALLAX EFFECT FOR HOME PRODUCTION BLOCK =====
+
+// ===== UNIVERSAL PARALLAX EFFECT =====
 
 document.addEventListener('DOMContentLoaded', function() {
   'use strict';
 
   // Select all parallax images
-  const parallaxImages = document.querySelectorAll('.home-production-image img');
+  const parallaxImages = document.querySelectorAll('.parallax-image');
 
   if (!parallaxImages.length) return;
 
-  // Throttle function to limit how often scroll events fire
   let ticking = false;
 
   function updateParallax() {
@@ -127,33 +127,25 @@ document.addEventListener('DOMContentLoaded', function() {
       const scrollY = window.pageYOffset || window.scrollY;
 
       parallaxImages.forEach(img => {
-        const container = img.closest('.home-production-image');
+        const container = img.closest('.parallax-container');
         if (!container) return;
 
         const rect = container.getBoundingClientRect();
         const containerHeight = rect.height;
         const containerTop = rect.top + scrollY;
-
-        // Calculate how much of the container is visible in the viewport
         const viewportHeight = window.innerHeight;
 
-        // Calculate the progress of the container through the viewport
-        // 0 = top of container enters viewport, 1 = bottom of container leaves viewport
+        // Progress: 0 when top enters viewport, 1 when bottom leaves
         const progress = (scrollY - containerTop + viewportHeight) / (containerHeight + viewportHeight);
-
-        // Clamp progress between 0 and 1
         const clampedProgress = Math.max(0, Math.min(1, progress));
 
-        // Image height is larger than container (133.33% desktop, 112.5% mobile)
-        // Calculate the max translation amount (as percentage of image height)
+        // Calculate max translation based on image height
         const imgHeight = img.offsetHeight || img.clientHeight;
-        const containerHeightPx = containerHeight;
-        const extraHeight = imgHeight - containerHeightPx;
+        const extraHeight = imgHeight - containerHeight;
         const maxTranslate = extraHeight / imgHeight * 100;
 
-        // Apply translation: image moves UP as progress increases
+        // Apply translation
         const translateY = clampedProgress * maxTranslate;
-
         img.style.transform = `translateY(-${translateY}%)`;
       });
 
@@ -161,13 +153,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Attach scroll and resize events
+  // Attach events
   window.addEventListener('scroll', updateParallax);
   window.addEventListener('resize', updateParallax);
 
   // Initial update
   updateParallax();
 });
-
-const speed = parseFloat(img.dataset.speed) || 0.25;  // default 0.25
-const translateY = clampedProgress * maxTranslate * speed;

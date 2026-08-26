@@ -287,13 +287,13 @@ Colors
 /* Brights */
 :root {
   --WINDSWEPT: #DBD3C5;
-  --SANDSTONE: #EBE6DF;
+  --SANDSTONE: #E0DDD7;
   --OFFWHITE: #FFFEFC;
-  --FEATHER: #FAF8F5;
+  --FEATHER: #F5F2ED;
 }
 /* Neutral */
 :root {
-  --GREY: #ADA9A3;
+  --GREY: #A3A09B;
   --STEELGREY: #6C6E70;
   --STORM: #373B40;
 }
@@ -318,25 +318,25 @@ Design details
 */
 /* Borders */
 :root {
-  --border-1: calc(var(--scale-1) * 1);
-  --border-2: calc(var(--scale-1) * 2);
-  --border-3: calc(var(--scale-1) * 3);
-  --border-4: calc(var(--scale-1) * 4);
+  --border-1: calc(var(--scale-1) * 1.25);
+  --border-2: calc(var(--scale-1) * 2.25);
+  --border-3: calc(var(--scale-1) * 3.25);
+  --border-4: calc(var(--scale-1) * 4.25);
 }
-@media only screen and (max-width: 540px) {
-  :root {
-    --border-1: calc(var(--scale-1) * 1.3);
-    --border-2: calc(var(--scale-1) * 2.3);
-    --border-3: calc(var(--scale-1) * 3.3);
-    --border-4: calc(var(--scale-1) * 4.3);
-  }
-}
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 640px) {
   :root {
     --border-1: calc(var(--scale-1) * 1.5);
     --border-2: calc(var(--scale-1) * 2.5);
     --border-3: calc(var(--scale-1) * 3.5);
     --border-4: calc(var(--scale-1) * 4.5);
+  }
+}
+@media only screen and (max-width: 480px) {
+  :root {
+    --border-1: calc(var(--scale-1) * 1.75);
+    --border-2: calc(var(--scale-1) * 2.75);
+    --border-3: calc(var(--scale-1) * 3.75);
+    --border-4: calc(var(--scale-1) * 4.75);
   }
 }
 
@@ -596,9 +596,9 @@ Typography
 @media (max-width: 1920px) {
   .head-sec {
     width: 50vw;
-    font-size: var(--font-32);
-    line-height: var(--font-32-lh);
-    letter-spacing: var(--font-32-ls);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
   }
 }
 
@@ -612,29 +612,39 @@ Typography
 
 @media (max-width: 1280px) {
   .head-sec {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
     width: width: 60vw;
   }
 }
 @media (max-width: 960px) {
   .head-sec {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
     width: 75vw;
   }
 }
 
 @media (max-width: 720px) {
   .head-sec {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
     width: 80vw;
   }
 }
+
+@media (max-width: 640px) {
+  .head-sec {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+    width: 80vw;
+  }
+}
+
 
 @media (max-width: 480px) {
   .head-sec {
@@ -931,7 +941,7 @@ UI components
     font-size: var(--font-16);
     line-height: var(--font-16-lh);
     letter-spacing: var(--font-16-ls-ac);
-    margin-bottom: var(--scale-12);
+    padding-bottom: var(--scale-10);
   }
 }
 
@@ -942,7 +952,7 @@ UI components
     font-size: var(--font-14);
     line-height: var(--font-14-lh);
     letter-spacing: var(--font-14-ls-ac);
-    margin-bottom: var(--scale-10);
+    padding-bottom: var(--scale-8);
   }
 }
 
@@ -952,7 +962,7 @@ UI components
     font-size: var(--font-14);
     line-height: var(--font-14-lh);
     letter-spacing: var(--font-14-ls-ac);
-    margin-bottom: var(--scale-10);
+    padding-bottom: var(--scale-8);
   }
 }
 
@@ -962,7 +972,7 @@ UI components
     font-size: var(--font-12);
     line-height: var(--font-12-lh);
     letter-spacing: var(--font-12-ls-ac);
-    margin-bottom: var(--scale-8);
+    padding-bottom: var(--scale-8);
   }
 }
 
@@ -1032,7 +1042,7 @@ UI components
 }
 
 /* Icon size calculation based on font properties */ 
-
+/* --------------------------------------------------------------------------------------- */ 
 :root {
   /* Menu typography – only change these in media queries */
   --menu-font-size: var(--font-14);
@@ -1053,6 +1063,14 @@ UI components
   --logo-width: calc(var(--menu-font-size) * 120 / 14);
 }
 
+
+
+/* Menu-based spacing — aligns with header menu button text */
+/* --------------------------------------------------------------------------------------- */ 
+:root {
+  --menu-based-spacing: calc(var(--global-spacing-lr) + var(--menu-icon-1-width) + var(--menu-icon-spacing));
+  --menu-based-spacing-right: calc(var(--global-spacing-lr) + var(--menu-icon-2-width) + var(--menu-icon-spacing));
+}
 
 .site-header {
   position: fixed;
@@ -1149,13 +1167,15 @@ UI components
   flex-direction: column;
   justify-content: space-between;
 }
+
 .menu-content.is-open {
   height: 100vh;
 }
+
 .nav-list {
   margin: 0;
   width: 100%;
-  padding-top: calc(var(--menu-top-h) + var(--scale-72));
+  padding-top: calc(var(--menu-top-h) + var(--global-spacing-lr));
   padding-left: calc(var(--global-spacing-lr) + var(--menu-icon-1-width) + var(--menu-icon-spacing));
   padding-right: calc(var(--global-spacing-lr) + var(--menu-icon-2-width) + var(--menu-icon-spacing));
   padding-bottom: calc(var(--global-spacing-lr) * 2);
@@ -1165,6 +1185,7 @@ UI components
   gap: var(--scale-24);
   align-self: flex-start;
 }
+
 .nav-link {
   font-family: var(--font-sec);
   font-size: var(--font-14);
@@ -1204,9 +1225,23 @@ UI components
 
 /* Menu panel — only font-size changes, logo follows automatically */ 
 
+@media only screen and (min-width: 4096px) {
+  :root {
+    --menu-top-h: calc(var(--safe-top) + var(--scale-72));
+  }
+  :root {
+    --menu-font-size: var(--font-16);
+    --menu-line-height: var(--font-16-lh);
+    --menu-letter-spacing: var(--font-16-ls-ac);
+  }
+}
+
+
+
+
 @media only screen and (max-width: 4096px) {
   :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-64));
+    --menu-top-h: calc(var(--safe-top) + var(--scale-72));
   }
   :root {
     --menu-font-size: var(--font-16);
@@ -1219,7 +1254,7 @@ UI components
 
 @media only screen and (max-width: 2560px) {
   :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-56));
+    --menu-top-h: calc(var(--safe-top) + var(--scale-72));
   }
   :root {
     --menu-font-size: var(--font-14);
@@ -1228,56 +1263,39 @@ UI components
   }
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 2560px) {
   :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-56));
+    --menu-top-h: calc(var(--safe-top) + var(--scale-72));
+  }
+  :root {
+    --menu-font-size: var(--font-20);
+    --menu-line-height: var(--font-20-lh);
+    --menu-letter-spacing: var(--font-20-ls-ac);
+  }
+  .nav-list {
+    padding-top: calc(var(--menu-top-h) + var(--global-spacing-lr));
+    padding-left: calc(var(--global-spacing-lr) + var(--menu-icon-1-width) + var(--menu-icon-spacing));
+    padding-right: calc(var(--global-spacing-lr) + var(--menu-icon-2-width) + var(--menu-icon-spacing));
+  }
+  .nav-link {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls-ac);
+  }
+}
+
+
+@media only screen and (max-width: 1920px) {
+  :root {
+    --menu-top-h: calc(var(--safe-top) + var(--scale-64));
   }
   :root {
     --menu-font-size: var(--font-14);
     --menu-line-height: var(--font-14-lh);
     --menu-letter-spacing: var(--font-14-ls-ac);
   }
-}
-
-@media only screen and (max-width: 640px) {
-  :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-56));
-  }
-  :root {
-    --menu-font-size: var(--font-12);
-    --menu-line-height: var(--font-12-lh);
-    --menu-letter-spacing: var(--font-12-ls-ac);
-  }
-}
-
-@media only screen and (max-width: 560px) {
-  :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-56));
-  }
-  :root {
-    --menu-font-size: var(--font-14);
-    --menu-line-height: var(--font-14-lh);
-    --menu-letter-spacing: var(--font-14-ls-ac);
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-56));
-  }
-  :root {
-    --menu-font-size: var(--font-12);
-    --menu-line-height: var(--font-12-lh);
-    --menu-letter-spacing: var(--font-12-ls-ac);
-  }
-}
-
-@media only screen and (max-width: 440px) {
-  :root {
-    --menu-top-h: calc(var(--safe-top) + var(--scale-56));
-  }
-  :root {
-    --menu-font-size: var(--font-14); /* controls icon size at this breakpoint */ 
+  .nav-list {
+    padding-top: calc(var(--menu-top-h) + var(--global-spacing-lr));
   }
   .nav-link {
     font-size: var(--font-16);
@@ -1285,6 +1303,100 @@ UI components
     letter-spacing: var(--font-16-ls-ac);
   }
 }
+
+@media only screen and (max-width: 960px) {
+  :root {
+    --menu-top-h: calc(var(--safe-top) + var(--scale-80));
+  }
+  :root {
+    --menu-font-size: var(--font-16);
+    --menu-line-height: var(--font-20-16);
+    --menu-letter-spacing: var(--font-20-16-ac);
+  }
+  .nav-list {
+    padding-top: calc(var(--menu-top-h) + var(--global-spacing-lr) * 2);
+  }
+  .nav-link {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  :root {
+    --menu-top-h: calc(var(--safe-top) + var(--scale-80));
+  }
+  :root {
+    --menu-font-size: var(--font-16);
+    --menu-line-height: var(--font-16-lh);
+    --menu-letter-spacing: var(--font-16-ls-ac);
+  }
+  .nav-list {
+    padding-top: calc(var(--menu-top-h) + var(--global-spacing-lr) * 2);
+  }
+  .nav-link {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  :root {
+    --menu-top-h: calc(var(--safe-top) + var(--scale-72));
+  }
+  :root {
+    --menu-font-size: var(--font-16);
+    --menu-line-height: var(--font-16-lh);
+    --menu-letter-spacing: var(--font-16-ls-ac);
+  }
+  .nav-list {
+    padding-top: calc(var(--menu-top-h) + var(--global-spacing-lr) * 3);
+  }
+  .nav-link {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+  }
+}
+
+
+@media only screen and (max-width: 440px) {
+  :root {
+    --menu-top-h: calc(var(--safe-top) + var(--scale-96));
+  }
+  .header-menu-btn-text {
+    display: none;
+  }
+  :root {
+    --menu-font-size: var(--font-20);
+    --menu-line-height: var(--font-20-lh);
+    --menu-letter-spacing: var(--font-20-ls-ac);
+  }
+  .nav-link {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls-ac);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  :root {
+    --menu-top-h: calc(var(--safe-top) + var(--scale-80));
+  }
+  :root {
+    --menu-font-size: var(--font-20);
+    --menu-line-height: var(--font-20-lh);
+    --menu-letter-spacing: var(--font-20-ls-ac);
+  }
+  .nav-link {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls-ac);
+  }
+}
+
 
 /* Menu open collapsible */ 
 /* Remove logo on low height e.g. mobile horizontal */
@@ -1318,6 +1430,7 @@ UI components
   object-fit: cover;
   display: block;
 }
+
 /* Parent: vertical centering only, zero horizontal padding */
 .split-text {
   display: flex;
@@ -1408,6 +1521,9 @@ UI components
 .split-reverse {
     flex-direction: row-reverse;
 }
+
+
+
 
 @media (max-width: 4096px) {
   .split-heading-row {
@@ -1681,23 +1797,15 @@ UI components
   }
   .split-text {
     aspect-ratio: auto;
-    padding-top: 12vh;
-    padding-right: 0;
-    padding-bottom: 12vh;
-    padding-left: calc(var(--global-spacing-lr) * 2.5);
+    padding-top: calc(var(--menu-based-spacing) * 1.5);     /* ← menu-based * 1.5 */
+    padding-bottom: calc(var(--menu-based-spacing) * 2);    /* ← menu-based * 2 */
+    padding-left: calc(var(--menu-based-spacing));
+    padding-right: calc(var(--menu-based-spacing-right));
   }
   .split-text-content {
-    width: fit-content;  /* ← keep this! */
-    margin-left: 0;      /* ← left-align */
-    margin-right: auto;  /* ← keep right side free */
-  }
-}
-
-@media (max-width: 640px) {
-  .split-text {
-    padding-top: 12vh;
-    padding-bottom: 12vh;
-    padding-left: calc(var(--global-spacing-lr) * 2);
+    width: fit-content;
+    margin-left: 0;
+    margin-right: auto;
   }
 }
 
@@ -1709,11 +1817,12 @@ UI components
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
   .split-text {
-    padding-top: 8vh;
-    padding-bottom: 8vh;
-    padding-left: calc(var(--global-spacing-lr) * 3);
+    padding-top: calc(var(--global-spacing-lr) * 2);
+    padding-bottom: calc(var(--global-spacing-lr) * 2.5);
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);
   }
 }
 
@@ -1800,10 +1909,10 @@ UI components
 }
 
 /* ------------------------------------------------------------------------------- */
-/* FULL WIDTH IMAGE – reusable full‑width image with responsive cropping */
+/* BIG IMAGE – reusable full‑width image with responsive cropping */
 /* ------------------------------------------------------------------------------- */
 
-.full-width-image {
+.big-image {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -1811,7 +1920,7 @@ UI components
   background-color: var(--NOIR);
 }
 
-.full-width-image img {
+.big-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1819,17 +1928,17 @@ UI components
   display: block;
 }
 
-/* ≤720px: crop starts (image stays centered, sides cropped) */
-@media (max-width: 720px) {
-  .full-width-image {
-    aspect-ratio: 4 / 3;
+/* Mobile: 4:5 (changes at 960px to match mobile layout) */
+@media (max-width: 960px) {
+  .big-image {
+    aspect-ratio: 4 / 5;
   }
 }
 
-/* ≤480px: square crop (height = width) */
+/* Keep 4:5 on smaller screens */
 @media (max-width: 480px) {
-  .full-width-image {
-    aspect-ratio: 1 / 1;
+  .big-image {
+    aspect-ratio: 4 / 5;
   }
 }
 
@@ -1859,7 +1968,7 @@ UI components
 }
 
 .accent-block-heading {
-  width: 100%;
+  width: 50vw;
   font-family: var(--font-sec);
   font-size: var(--font-32);      
   line-height: var(--font-32-lh);
@@ -1893,9 +2002,9 @@ UI components
     padding-bottom: 20vh;
   }
   .accent-block-heading {
-    font-size: var(--font-48);      /* ← +8 from 48 */
-    line-height: var(--font-48-lh);
-    letter-spacing: var(--font-48-ls);
+    font-size: var(--font-40);      /* ← +8 from 48 */
+    line-height: var(--font-40-lh);
+    letter-spacing: var(--font-40-ls);
     margin-bottom: 6vh;
   }
   .accent-block-content {
@@ -2137,6 +2246,15 @@ WORKS EXAMPLES / PORTFOLIO / SAME FOR ALL PAGES
     letter-spacing: var(--font-32-ls);
   }
 }
+
+/* This bottom contains only on industry related projects pages */
+.projects-button-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: calc(var(--global-spacing-lr) * 1.333);
+}
+
 
 /* Large screens: font scaling */
 @media (max-width: 2560px) {
@@ -2432,8 +2550,8 @@ Modal quick contact window
 @media only screen and (max-width: 800px) {
   .contact-popup {
     width: 100%;
-    height: calc(100vh - (var(--safe-top) + var(--menu-top-h)));
-    margin-top: calc(var(--safe-top) + var(--menu-top-h));
+    height: calc(100vh - var(--menu-top-h));
+    margin-top: var(--menu-top-h);
     padding: var(--global-spacing-lr) var(--global-spacing-lr) var(--scale-96);
     border-bottom: none;
     border-radius: 0;
@@ -2515,7 +2633,7 @@ Modal quick contact window
 /* ===== For very small heights (e.g., landscape mobile) ===== */
 @media (max-height: 560px) and (max-width: 800px) {
   .contact-popup {
-    height: calc(100vh - (var(--safe-top) + var(--menu-top-h)));
+    height: 100%;
     padding-top: var(--scale-16);
     padding-bottom: var(--scale-48);
   }
@@ -3198,7 +3316,8 @@ Contact Block (Independent)
 /* MOBILE <= 800px */
 @media (max-width: 800px) {
   .site-footer {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
   }  
   .footer-content {
     padding-top: calc(var(--menu-top-h) * 2 + var(--global-spacing-lr));
@@ -3270,6 +3389,8 @@ Contact Block (Independent)
 @media (max-width: 640px) {
   .site-footer {
     height: 100vh;
+    min-height: 100vh;
+    height: auto;
   }  
   .footer-content {
     padding-top: calc(var(--menu-top-h) * 2 + var(--global-spacing-lr));
@@ -3489,9 +3610,10 @@ Contact Block (Independent)
 @media (max-height: 960px) {
   .site-footer {
     height: 100vh;
+    min-height: 100vh;
+    height: auto;
   }
 }
-
 
 
 /* ------------------------------------------------------------------------------- */
@@ -3512,7 +3634,7 @@ Contact Block (Independent)
 
 .production-technologies-content {
   text-align: center;
-  width: 100%;
+  width: 60vw;
   max-width: var(--scale-960);
   display: flex;
   flex-direction: column;
@@ -3615,10 +3737,10 @@ Contact Block (Independent)
     font-size: var(--font-32);
     line-height: var(--font-32-lh);
     letter-spacing: var(--font-32-ls);
-    margin-bottom: var(--scale-72);
+    margin-bottom: var(--scale-64);
   }
   .production-technologies-content {
-    width: 60vw;
+    width: 50vw;
   }
   .link-group .link {
     padding-bottom: var(--scale-10);
@@ -3634,13 +3756,13 @@ Contact Block (Independent)
     padding-bottom: 15vh;
   }
   .production-technologies-heading {
-    font-size: var(--font-32);
-    line-height: var(--font-32-lh);
-    letter-spacing: var(--font-32-ls);
-    margin-bottom: var(--scale-72);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
+    margin-bottom: var(--scale-48);
   }
   .production-technologies-content {
-    width: 60vw;
+    width: 50vw;
   }
   .link-group .link {
     padding-bottom: var(--scale-8);
@@ -3659,10 +3781,10 @@ Contact Block (Independent)
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
-    margin-bottom: 5vh;
+    margin-bottom: var(--scale-48);
   }
   .production-technologies-content {
-    width: 66vw;
+    width: 50vw;
   }
 }
 
@@ -3675,7 +3797,7 @@ Contact Block (Independent)
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
-    margin-bottom: 5vh;
+    margin-bottom: var(--scale-48);
   }
   .production-technologies-content {
     width: 50vw;
@@ -3684,14 +3806,16 @@ Contact Block (Independent)
 
 @media only screen and (max-width: 960px) {
   .production-technologies {
-    padding-top: 15vh;
-    padding-bottom: 15vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 2);
+    padding-left: calc(var(--menu-based-spacing));
+    padding-right: calc(var(--menu-based-spacing-right));
   }
   .production-technologies-heading {
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
-    margin-bottom: 5vh;
+    margin-bottom: var(--scale-48);
   }
   .production-technologies-content {
     width: 75vw;
@@ -3737,20 +3861,22 @@ Contact Block (Independent)
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
-    margin-bottom: 5vh;
+    margin-bottom: var(--scale-48);
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 440px) {
   .production-technologies {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--global-spacing-lr) * 2);
+    padding-bottom: calc(var(--global-spacing-lr) * 2.5);
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);
   }
   .production-technologies-heading {
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
-    margin-bottom: 7vh;
+    margin-bottom: var(--scale-64);
   }
 }
 
@@ -3763,6 +3889,323 @@ Contact Block (Independent)
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
-    margin-bottom: 7vh;
+    margin-bottom: var(--scale-64);
   }
+}
+
+
+
+/* ------------------------------------------------------------------------------- */
+/* BIG FEATURE – reusable block with big image + heading + text + optional button */
+/* ------------------------------------------------------------------------------- */
+
+.big-feature {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: var(--OFFWHITE);
+}
+
+.big-feature-content {
+  width: 50vw;
+  max-width: var(--scale-960);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: calc(var(--menu-based-spacing) * 1.5);
+  padding-bottom: calc(var(--menu-based-spacing) * 2);
+}
+
+.big-feature-heading {
+  width: 100%;
+  font-family: var(--font-sec);
+  font-size: var(--font-14);
+  line-height: var(--font-14-lh);
+  letter-spacing: var(--font-14-ls-ac);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--GOLD);
+  margin-bottom: var(--scale-48);
+  max-width: 100%;
+  padding-bottom: var(--scale-12);
+  border-bottom: var(--border-1) solid var(--GOLD);
+}
+
+.big-feature-text {
+  font-family: var(--font-pri);
+  font-size: var(--font-24);
+  line-height: var(--font-24-lh);
+  letter-spacing: var(--font-24-ls);
+  text-decoration: none;
+  color: var(--NOIR);
+  margin-bottom: var(--scale-72);
+}
+
+.big-feature-text p {
+  margin-bottom: var(--scale-12);
+}
+
+.big-feature-text p:last-child {
+  margin-bottom: 0;
+}
+
+.big-feature-btn {
+  align-self: flex-start;
+}
+
+/* ============================================================ */
+/* ===== HEADING SCALING (based on split-media heading) ===== */
+/* ============================================================ */
+
+/* here it is separated from body-text scaling but ok. */
+
+@media only screen and (max-width: 4096px) {
+  .big-feature-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+    padding-bottom: var(--scale-12);
+    margin-bottom: var(--scale-32);
+  }
+}
+
+@media only screen and (max-width: 2560px) {
+  .big-feature-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+    padding-bottom: var(--scale-12);
+    margin-bottom: var(--scale-32);
+  }
+}
+
+@media only screen and (max-width: 1920px) {
+  .big-feature-heading {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls-ac);
+    padding-bottom: var(--scale-10);
+    margin-bottom: var(--scale-24);
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .big-feature-heading {
+    font-size: var(--font-12);
+    line-height: var(--font-12-lh);
+    letter-spacing: var(--font-12-ls-ac);
+    padding-bottom: var(--scale-8);
+    margin-bottom: var(--scale-20);
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .big-feature-heading {
+    font-size: var(--font-12);
+    line-height: var(--font-12-lh);
+    letter-spacing: var(--font-12-ls-ac);
+    padding-bottom: var(--scale-8);
+    margin-bottom: var(--scale-16);
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .big-feature-heading {
+    font-size: var(--font-12);
+    line-height: var(--font-12-lh);
+    letter-spacing: var(--font-12-ls-ac);
+    padding-bottom: var(--scale-8);
+    margin-bottom: var(--scale-16);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .big-feature-heading {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls-ac);
+    padding-bottom: var(--scale-12);
+    margin-bottom: var(--scale-32);
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .big-feature-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+    padding-bottom: var(--scale-12);
+    margin-bottom: var(--scale-24);
+  }
+}
+
+
+
+/* ============================================================ */
+/* ===== DESKTOP FONT SCALING (based on .accent-block) ===== */
+/* ============================================================ */
+
+/* ----- min-width: 4096px (ultra-large screens) ----- */
+@media only screen and (min-width: 4096px) {
+  .big-feature-text {
+    font-size: var(--font-48);
+    line-height: var(--font-48-lh);
+    letter-spacing: var(--font-48-ls);
+    margin-bottom: var(--scale-96);
+  }
+}
+
+/* ----- max-width: 4096px (1921–4096px) ----- */
+@media only screen and (max-width: 4096px) {
+  .big-feature-text {
+    font-size: var(--font-40);
+    line-height: var(--font-40-lh);
+    letter-spacing: var(--font-40-ls);
+    margin-bottom: var(--scale-80);
+  }
+}
+
+/* ----- max-width: 2560px (1921–2560px) ----- */
+@media only screen and (max-width: 2560px) {
+  .big-feature-text {
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls);
+    margin-bottom: var(--scale-72);
+  }
+}
+
+/* ----- max-width: 1920px (1281–1920px) — matches base ----- */
+@media only screen and (max-width: 1920px) {
+  .big-feature-text {
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
+    margin-bottom: var(--scale-72);
+  }
+}
+
+/* ===== Mobile: ≤960px ===== */
+
+@media only screen and (max-width: 960px) {
+  .big-feature {
+    padding-left: calc(var(--menu-based-spacing));
+    padding-right: calc(var(--menu-based-spacing-right));
+  }
+  .big-feature-content {
+    width: 100%;
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 2);
+  }
+  .big-feature-heading {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls-ac);
+  }
+  .big-feature-text {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+  }
+}
+
+/* ===== Below 480px ===== */
+
+@media only screen and (max-width: 480px) {
+  .big-feature {
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);
+  }
+  .big-feature-content {
+    padding-top: calc(var(--global-spacing-lr) * 2);
+    padding-bottom: calc(var(--global-spacing-lr) * 2.5);
+  }
+  .big-feature-heading {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls-ac);
+  }
+  .big-feature-text {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls);
+    margin-bottom: var(--scale-56);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .big-feature-text {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .big-feature-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+  }
+  .big-feature-text {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+  }
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------- */
+/* PARALLAX — universal component */
+/* ------------------------------------------------------------------------------- */
+
+.parallax-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* aspect-ratio must be set on each instance */
+}
+
+.parallax-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;           /* default: 20% extra for parallax */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  will-change: transform;
+}
+
+/* Optional: different heights for different parallax intensities */
+.parallax-image.parallax-strong {
+  height: 133.33%;        /* 33% extra — strong parallax */
+}
+
+.parallax-image.parallax-subtle {
+  height: 112.5%;         /* 12.5% extra — subtle parallax */
+}
+
+/* Container aspect ratios — use these on .parallax-container */
+.parallax-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.parallax-2-1 {
+  aspect-ratio: 2 / 1;
+}
+
+.parallax-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.parallax-4-5 {
+  aspect-ratio: 4 / 5;    /* portrait */
 }
