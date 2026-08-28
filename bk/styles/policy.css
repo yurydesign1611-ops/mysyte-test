@@ -1,0 +1,229 @@
+/* ------------------------------------------------------------------------------- */
+/* POLICY PAGE – STYLES */
+/* ------------------------------------------------------------------------------- */
+
+/* ===== POLICY CONTENT (main container) ===== */
+
+.policy-content {
+  padding-top: var(--scale-128);
+  padding-bottom: var(--scale-160);
+  padding-left: var(--global-spacing-lr);
+  padding-right: var(--global-spacing-lr);
+  background-color: var(--OFFWHITE);
+  width: 60vw;
+  max-width: var(--scale-960);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADING GROUP (supertitle + h1) ===== */
+
+.policy-heading-group {
+  text-align: center;
+  margin-bottom: var(--scale-40);
+  width: 100%;
+}
+
+.policy-heading-group .supertitle {
+  margin-bottom: var(--scale-4);
+}
+
+.policy-heading-group .head-sec {
+  text-align: center;  /* centers the text inside the block */
+  width: 100%;         /* keeps the border full-width */
+  font-family: var(--font-sec);
+  font-size: var(--font-20);
+  line-height: var(--font-20-lh);
+  letter-spacing: var(--font-20-ls);
+}
+
+
+/* ===== META INFO (city + date) ===== */
+
+.policy-meta {
+  display: block;
+  text-align: left;
+  margin-bottom: var(--scale-24);
+}
+
+/* ===== MAIN TEXT CONTAINER ===== */
+
+.policy-text {
+  width: 100%;
+}
+
+/* ===== PARAGRAPHS ===== */
+
+.policy-par {
+  margin-bottom: var(--scale-8);
+  text-align: left;
+}
+
+.policy-par:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== SUBSECTION NUMBERS ===== */
+
+.subsection-num {
+  color: var(--GREY);
+  display: inline-block;
+  margin-right: var(--scale-4);
+}
+
+/* ===== SECTION HEADINGS (h2) ===== */
+
+/* to overriding font style */ 
+.policy-section-heading {
+  margin-top: var(--scale-40);
+  margin-bottom: var(--scale-16);
+  text-align: left;
+  border-bottom: var(--border-1) solid var(--GREY);
+  padding-bottom: var(--scale-8);
+  width: 100%;
+  font-size: var(--font-16);
+  line-height: var(--font-16-lh);
+  letter-spacing: var(--font-16-ls);
+}
+
+
+/* ===== LISTS (using global bullet-list) ===== */
+
+.policy-text .bullet-list {
+  margin-bottom: var(--scale-24);
+  margin-top: var(--scale-4);
+}
+
+.policy-text .bullet-list:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablet: more padding, wider content */
+
+@media (max-width: 1280px) {
+  .policy-content {
+    width: 100%;
+    padding-top: 15vh;
+    padding-bottom: 20vh;
+    padding-left: calc(var(--global-spacing-lr) * 4);
+    padding-right: calc(var(--global-spacing-lr) * 4);
+  }
+  .policy-heading-group {
+    margin-bottom: var(--scale-24);
+  }
+  .policy-heading-group .supertitle {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls-ac);
+  }
+  .policy-heading-group .head-sec {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+  }
+}
+
+
+@media (max-width: 960px) {
+  .policy-content {
+    width: 100%;
+    padding-top: 15vh;
+    padding-bottom: 20vh;
+    padding-left: calc(var(--global-spacing-lr) * 4);
+    padding-right: calc(var(--global-spacing-lr) * 4);
+  }
+  .policy-heading-group {
+    margin-bottom: var(--scale-24);
+  }
+  .policy-heading-group .supertitle {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls-ac);
+  }
+  .policy-heading-group .head-sec {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+  }
+}
+
+/* Small tablet / large mobile */
+@media (max-width: 800px) {
+  .policy-content {
+    padding-left: calc(var(--global-spacing-lr) * 3);
+    padding-right: calc(var(--global-spacing-lr) * 3);
+  }
+  .policy-section-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    margin-top: var(--scale-24);
+    margin-bottom: var(--scale-12);
+  }
+  .policy-par {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+  }
+}
+
+@media (max-width: 640px) {
+  .policy-content {
+    padding-top: 12vh;
+    padding-bottom: 16vh;
+    padding-left: calc(var(--global-spacing-lr) * 2);
+    padding-right: calc(var(--global-spacing-lr) * 2);
+  }
+  .policy-par {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+  }
+}
+
+@media (max-width: 480px) {
+  .policy-content {
+    padding-top: 10vh;
+    padding-bottom: 12vh;
+    padding-left: calc(var(--global-spacing-lr) * 2);
+    padding-right: calc(var(--global-spacing-lr) * 2);
+  }
+  .policy-heading-group .head-sec {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls);
+  }
+  .policy-section-heading {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+  }
+  .policy-par {
+    font-size: var(--font-12);
+    line-height: var(--font-12-lh);
+    letter-spacing: var(--font-12-ls);
+  }
+  .subsection-num {
+    display: block;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .policy-content {
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);
+  }
+  .policy-par {
+    font-size: var(--font-11);
+    line-height: var(--font-11-lh);
+    letter-spacing: var(--font-11-ls);
+  }
+  .policy-heading-group .head-sec {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+  }
+}
