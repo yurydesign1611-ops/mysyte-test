@@ -107,56 +107,75 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// ===== UNIVERSAL PARALLAX EFFECT =====
+// ===== SMOOTH PARALLAX WITH LERP =====
 
 document.addEventListener('DOMContentLoaded', function() {
   'use strict';
 
-  // Select all parallax images
-  const parallaxImages = document.querySelectorAll('.parallax-image');
-
+  const parallaxImages = document.querySelectorAll('.parallax-image, .split-parallax img, .big-feature-parallax img');
   if (!parallaxImages.length) return;
 
-  let ticking = false;
+  // Store current and target positions for each image
+  const imageStates = [];
 
-  function updateParallax() {
-    if (ticking) return;
-    ticking = true;
+  parallaxImages.forEach(img => {
+    const container = img.closest('.parallax-container, .split-parallax, .big-feature-parallax');
+    if (!container) return;
 
-    requestAnimationFrame(() => {
-      const scrollY = window.pageYOffset || window.scrollY;
+    imageStates.push({
+      img: img,
+      container: container,
+      currentY: 0,
+      targetY: 0
+    });
+  });
 
-      parallaxImages.forEach(img => {
-        const container = img.closest('.parallax-container');
-        if (!container) return;
+  const smoothing = 0.066; // Lower = smoother but slower to catch up
 
-        const rect = container.getBoundingClientRect();
-        const containerHeight = rect.height;
-        const containerTop = rect.top + scrollY;
-        const viewportHeight = window.innerHeight;
+  function updateTargets() {
+    const scrollY = window.pageYOffset || window.scrollY;
+    const viewportHeight = window.innerHeight;
 
-        // Progress: 0 when top enters viewport, 1 when bottom leaves
-        const progress = (scrollY - containerTop + viewportHeight) / (containerHeight + viewportHeight);
-        const clampedProgress = Math.max(0, Math.min(1, progress));
+    imageStates.forEach(state => {
+      const rect = state.container.getBoundingClientRect();
+      const containerHeight = rect.height;
+      const containerTop = rect.top + scrollY;
 
-        // Calculate max translation based on image height
-        const imgHeight = img.offsetHeight || img.clientHeight;
-        const extraHeight = imgHeight - containerHeight;
-        const maxTranslate = extraHeight / imgHeight * 100;
+      const progress = (scrollY - containerTop + viewportHeight) / (containerHeight + viewportHeight);
+      const clampedProgress = Math.max(0, Math.min(1, progress));
 
-        // Apply translation
-        const translateY = clampedProgress * maxTranslate;
-        img.style.transform = `translateY(-${translateY}%)`;
-      });
+      const imgHeight = state.img.offsetHeight || state.img.clientHeight;
+      const extraHeight = imgHeight - containerHeight;
+      const maxTranslate = extraHeight / imgHeight * 100;
 
-      ticking = false;
+      state.targetY = clampedProgress * maxTranslate;
     });
   }
 
-  // Attach events
-  window.addEventListener('scroll', updateParallax);
-  window.addEventListener('resize', updateParallax);
+  function animate() {
+    let needsUpdate = false;
 
-  // Initial update
-  updateParallax();
+    imageStates.forEach(state => {
+      // Smoothly interpolate currentY toward targetY
+      state.currentY += (state.targetY - state.currentY) * smoothing;
+
+      // Only update if the difference is significant
+      if (Math.abs(state.currentY - state.targetY) > 0.01) {
+        needsUpdate = true;
+        state.img.style.transform = `translate3d(0, -${state.currentY}%, 0)`;
+      }
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  // Update targets on scroll and resize
+  window.addEventListener('scroll', updateTargets, { passive: true });
+  window.addEventListener('resize', updateTargets, { passive: true });
+
+  // Initial calculation
+  updateTargets();
+
+  // Start the animation loop
+  animate();
 });

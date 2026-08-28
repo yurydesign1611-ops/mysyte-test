@@ -153,10 +153,10 @@ Scale logic
     --scale-coef: calc(0.0625rem + (0.078125 - 0.0625) * ((100vw - 1280px) / (1666 - 1280)));
   }
 }
-/* For screens from 320 to 480 */
-@media only screen and (max-width: 480px) {
+/* For screens from 320 to 440 */
+@media only screen and (max-width: 440px) {
   :root {
-    --scale-coef: calc(0.046875rem + (0.0625 - 0.046875) * ((100vw - 320px) / (480 - 320)));
+    --scale-coef: calc(0.046875rem + (0.0625 - 0.046875) * ((100vw - 320px) / (440 - 320)));
   }
 }
 /* For screens from 200 to 320 — aggressive scaling */
@@ -204,6 +204,7 @@ Relative scale variables
   --scale-256:  calc(var(--scale-coef) * 256);
   --scale-320:  calc(var(--scale-coef) * 320);
   --scale-400:  calc(var(--scale-coef) * 400);
+  --scale-440:  calc(var(--scale-coef) * 440);
   --scale-480:  calc(var(--scale-coef) * 480);
   --scale-560:  calc(var(--scale-coef) * 560);
   --scale-640:  calc(var(--scale-coef) * 640);
@@ -212,6 +213,7 @@ Relative scale variables
   --scale-960:  calc(var(--scale-coef) * 960);
   --scale-1024: calc(var(--scale-coef) * 1024);
   --scale-1200: calc(var(--scale-coef) * 1200);
+  --scale-1280: calc(var(--scale-coef) * 1280);
 }
 
 /*
@@ -403,14 +405,14 @@ Global layout
     --global-spacing-r: 4vw;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 440px) {
   :root {
     --global-spacing-lr: var(--scale-32);
     --global-spacing-l: var(--scale-32);
     --global-spacing-r: var(--scale-32);
   }
 }
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 320px) {
   :root {
     --global-spacing-lr: var(--scale-24);
     --global-spacing-l: var(--scale-24);
@@ -538,7 +540,7 @@ Typography
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
   .head-pri {
     font-size: var(--font-16);
     line-height: var(--font-16-lh);
@@ -615,7 +617,7 @@ Typography
     font-size: var(--font-24);
     line-height: var(--font-24-lh);
     letter-spacing: var(--font-24-ls);
-    width: width: 60vw;
+    width: 60vw;
   }
 }
 @media (max-width: 960px) {
@@ -646,7 +648,26 @@ Typography
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
+  .head-sec {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+    width: 75vw;
+  }
+}
+
+
+@media (max-width: 440) {
+  .head-sec {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+    width: 75vw;
+  }
+}
+
+@media (max-width: 440) {
   .head-sec {
     font-size: var(--font-14);
     line-height: var(--font-14-lh);
@@ -727,7 +748,7 @@ Typography
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440) {
   .head-tri {
     font-size: var(--font-14);
     line-height: var(--font-14-lh);
@@ -812,7 +833,7 @@ Typography
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440) {
   .supertitle {
     font-size: var(--font-16);
     line-height: var(--font-16-lh);
@@ -986,7 +1007,7 @@ UI components
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440) {
   .link {
     font-size: var(--font-16);
     line-height: var(--font-16-lh);
@@ -1310,8 +1331,8 @@ UI components
   }
   :root {
     --menu-font-size: var(--font-16);
-    --menu-line-height: var(--font-20-16);
-    --menu-letter-spacing: var(--font-20-16-ac);
+    --menu-line-height: var(--font-16);
+    --menu-letter-spacing: var(--font-16-ac);
   }
   .nav-list {
     padding-top: calc(var(--menu-top-h) + var(--global-spacing-lr) * 2);
@@ -1370,9 +1391,9 @@ UI components
     display: none;
   }
   :root {
-    --menu-font-size: var(--font-20);
-    --menu-line-height: var(--font-20-lh);
-    --menu-letter-spacing: var(--font-20-ls-ac);
+    --menu-font-size: var(--font-24);
+    --menu-line-height: var(--font-24-lh);
+    --menu-letter-spacing: var(--font-24-ls-ac);
   }
   .nav-link {
     font-size: var(--font-20);
@@ -1522,7 +1543,36 @@ UI components
     flex-direction: row-reverse;
 }
 
-
+@media (min-width: 4096px) {
+  .split-heading-row {
+    width: 100%;
+    padding-bottom: calc(var(--scale-1) * 10);
+    margin-bottom: var(--scale-32);
+  }
+  .split-text-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+  }  
+  .split-text-body {
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
+    margin-bottom: var(--scale-24);
+  }
+  .split-text-sub {
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
+    margin-bottom: var(--scale-40);
+  }
+  .split-text-link {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+    padding-bottom: var(--scale-12);    
+  }
+}  
 
 
 @media (max-width: 4096px) {
@@ -1763,7 +1813,7 @@ UI components
 @media (max-width: 320px) {
   .split-heading-row {
     width: 100%;
-    padding-bottom: calc(var(--scale-1) * 12);
+    padding-bottom: calc(var(--scale-1) * 8);
     margin-bottom: var(--scale-24);
   }
   .split-text-heading {
@@ -1772,16 +1822,16 @@ UI components
     letter-spacing: var(--font-16-ls-ac);
   } 
   .split-text-body {
-    font-size: var(--font-24);
-    line-height: var(--font-24-lh);
-    letter-spacing: var(--font-24-ls);
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls);
     margin-bottom: var(--scale-24);
   }
   .split-text-sub {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls);
-    margin-bottom: var(--scale-40);
+    font-size: var(--font-12);
+    line-height: var(--font-12-lh);
+    letter-spacing: var(--font-12-ls);
+    margin-bottom: var(--scale-32);
   }
 }
 
@@ -1799,8 +1849,8 @@ UI components
     aspect-ratio: auto;
     padding-top: calc(var(--menu-based-spacing) * 1.5);     /* ← menu-based * 1.5 */
     padding-bottom: calc(var(--menu-based-spacing) * 2);    /* ← menu-based * 2 */
-    padding-left: calc(var(--menu-based-spacing));
-    padding-right: calc(var(--menu-based-spacing-right));
+    padding-left: var(--menu-based-spacing);
+    padding-right:  var(--menu-based-spacing);
   }
   .split-text-content {
     width: fit-content;
@@ -1809,38 +1859,53 @@ UI components
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width:800px) {
   .split-text {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    padding-left: calc(var(--global-spacing-lr) * 3);
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 2);
   }
 }
 
+@media (max-width: 640px) {
+  .split-text {
+    padding-top: calc(var(--menu-based-spacing) * 2);
+    padding-bottom: calc(var(--menu-based-spacing) * 2.5);
+  }
+}
+
+@media (max-width: 560px) {
+  .split-text {
+    padding-top: calc(var(--menu-based-spacing) * 2);
+    padding-bottom: calc(var(--menu-based-spacing) * 2.5);
+    padding-left: var(--menu-based-spacing);
+  }
+}
+
+
 @media (max-width: 440px) {
   .split-text {
-    padding-top: calc(var(--global-spacing-lr) * 2);
-    padding-bottom: calc(var(--global-spacing-lr) * 2.5);
-    padding-left: var(--global-spacing-lr);
-    padding-right: var(--global-spacing-lr);
+    padding-top: calc(var(--menu-based-spacing) * 2);
+    padding-bottom: calc(var(--menu-based-spacing) * 2.5);
+    padding-left: calc(var(--global-spacing-lr) * 3);
   }
 }
 
 @media (max-width: 400px) {
   .split-text {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    padding-left: calc(var(--global-spacing-lr) * 1.6);
+    padding-top: calc(var(--menu-based-spacing) * 2);
+    padding-bottom: calc(var(--menu-based-spacing) * 2.5);
   }
 }
 
 @media (max-width: 320px) {
   .split-text {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    padding-left: calc(var(--global-spacing-lr) * 3);
+    padding-top: calc(var(--menu-based-spacing) * 2);
+    padding-bottom: calc(var(--menu-based-spacing) * 2.5);
+    padding-left: calc(var(--global-spacing-lr) * 2.5);
   }
 }
+
+
 
 
 /* ------------------------------------------------------------------------------- */
@@ -1908,39 +1973,6 @@ UI components
   padding: 0;
 }
 
-/* ------------------------------------------------------------------------------- */
-/* BIG IMAGE – reusable full‑width image with responsive cropping */
-/* ------------------------------------------------------------------------------- */
-
-.big-image {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background-color: var(--NOIR);
-}
-
-.big-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-/* Mobile: 4:5 (changes at 960px to match mobile layout) */
-@media (max-width: 960px) {
-  .big-image {
-    aspect-ratio: 4 / 5;
-  }
-}
-
-/* Keep 4:5 on smaller screens */
-@media (max-width: 480px) {
-  .big-image {
-    aspect-ratio: 4 / 5;
-  }
-}
 
 /* ------------------------------------------------------------------------------- */
 /* ACCENT BLOCK – highlighting feature, based on services-intro */
@@ -2110,7 +2142,7 @@ UI components
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 440) {
   .accent-block {
     padding-top: 15vh;
     padding-bottom: 15vh;
@@ -2372,7 +2404,7 @@ WORKS EXAMPLES / PORTFOLIO / SAME FOR ALL PAGES
 }
 
 /* Mobile layout (<= 480px) */
-@media (max-width: 480px) {
+@media (max-width: 440px) {
   .home-works {
     padding-top: var(--scale-128);
     padding-right: var(--scale-16);
@@ -3502,7 +3534,7 @@ Contact Block (Independent)
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
   .footer-content {
     padding-top: calc(var(--menu-top-h) * 1.75 + var(--global-spacing-lr));
     padding-bottom: calc(var(--global-spacing-lr) * 2.5);
@@ -3623,8 +3655,8 @@ Contact Block (Independent)
 .production-technologies {
   width: 100%;
   background-color: var(--FEATHER);
-  padding-top: 12vh;
-  padding-bottom: 12vh;
+  padding-top: calc(var(--menu-based-spacing) * 1.33);
+  padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   padding-left: var(--global-spacing-lr);
   padding-right: var(--global-spacing-lr);
   display: flex;
@@ -3692,8 +3724,8 @@ Contact Block (Independent)
 
 @media only screen and (min-width: 4096px) {
   .production-technologies {
-    padding-top: 12vh;
-    padding-bottom: 12vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .production-technologies-heading {
     font-size: var(--font-64);
@@ -3707,10 +3739,6 @@ Contact Block (Independent)
 }
 
 @media only screen and (max-width: 4096px) {
-  .production-technologies {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
-  }
   .production-technologies-heading {
     font-size: var(--font-32);
     line-height: var(--font-32-lh);
@@ -3729,10 +3757,6 @@ Contact Block (Independent)
 }
 
 @media only screen and (max-width: 2560px) {
-  .production-technologies {
-    padding-top: 15vh;
-    padding-bottom: 15vh;
-  }
   .production-technologies-heading {
     font-size: var(--font-32);
     line-height: var(--font-32-lh);
@@ -3751,10 +3775,6 @@ Contact Block (Independent)
 }
 
 @media only screen and (max-width: 1920px) {
-  .production-technologies {
-    padding-top: 15vh;
-    padding-bottom: 15vh;
-  }
   .production-technologies-heading {
     font-size: var(--font-24);
     line-height: var(--font-24-lh);
@@ -3773,10 +3793,6 @@ Contact Block (Independent)
 }
 
 @media only screen and (max-width: 1600px) {
-  .production-technologies {
-    padding-top: 12vh;
-    padding-bottom: 12vh;
-  }
   .production-technologies-heading {
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
@@ -3790,8 +3806,8 @@ Contact Block (Independent)
 
 @media only screen and (max-width: 1280px) {
   .production-technologies {
-    padding-top: 15vh;
-    padding-bottom: 15vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 2);
   }
   .production-technologies-heading {
     font-size: var(--font-20);
@@ -3823,6 +3839,12 @@ Contact Block (Independent)
 }
 
 @media only screen and (max-width: 720px) {
+  .production-technologies {
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+  }
   .production-technologies-content {
     text-align: left;
     align-items: flex-start;
@@ -3830,6 +3852,7 @@ Contact Block (Independent)
   }
   .production-technologies-heading {
     text-align: left;
+    margin-bottom: calc(var(--menu-based-spacing) * 1.2);
   }
   .production-technologies .supertitle {
     text-align: left;
@@ -3853,10 +3876,6 @@ Contact Block (Independent)
 }
 
 @media only screen and (max-width: 640px) {
-  .production-technologies {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
-  }
   .production-technologies-heading {
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
@@ -3867,23 +3886,10 @@ Contact Block (Independent)
 
 @media only screen and (max-width: 440px) {
   .production-technologies {
-    padding-top: calc(var(--global-spacing-lr) * 2);
-    padding-bottom: calc(var(--global-spacing-lr) * 2.5);
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(--menu-based-spacing) * 2.0);
     padding-left: var(--global-spacing-lr);
     padding-right: var(--global-spacing-lr);
-  }
-  .production-technologies-heading {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls);
-    margin-bottom: var(--scale-64);
-  }
-}
-
-@media only screen and (max-width: 440px) {
-  .production-technologies {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
   }
   .production-technologies-heading {
     font-size: var(--font-20);
@@ -3901,20 +3907,41 @@ Contact Block (Independent)
 
 .big-feature {
   width: 100%;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: calc(var(--menu-based-spacing));
+  padding-right: calc(var(--menu-based-spacing-right));
   background-color: var(--OFFWHITE);
 }
 
+/* BIG FEATURE IMAGE — dedicated parent (independent of parallax) */
+
+.big-feature-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* Desktop: 16:9 container */
+  aspect-ratio: 16 / 9;
+}
+
+.big-feature-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 133.33%;        /* 4:3 image → 133.33% of 16:9 container */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 .big-feature-content {
-  width: 50vw;
-  max-width: var(--scale-960);
+  width: 60vw;
+  max-width: var(--scale-1280);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: calc(var(--menu-based-spacing) * 1.5);
-  padding-bottom: calc(var(--menu-based-spacing) * 2);
+  padding-top: calc(var(--menu-based-spacing) * 1.33);
+  padding-bottom: calc(var(--menu-based-spacing) * 1.66);
 }
 
 .big-feature-heading {
@@ -3954,110 +3981,86 @@ Contact Block (Independent)
   align-self: flex-start;
 }
 
+
 /* ============================================================ */
-/* ===== HEADING SCALING (based on split-media heading) ===== */
+/* ===== IMAGE SCALING (separated for coninience ===== */
 /* ============================================================ */
 
-/* here it is separated from body-text scaling but ok. */
-
-@media only screen and (max-width: 4096px) {
-  .big-feature-heading {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls-ac);
-    padding-bottom: var(--scale-12);
-    margin-bottom: var(--scale-32);
-  }
-}
-
-@media only screen and (max-width: 2560px) {
-  .big-feature-heading {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls-ac);
-    padding-bottom: var(--scale-12);
-    margin-bottom: var(--scale-32);
-  }
-}
-
-@media only screen and (max-width: 1920px) {
-  .big-feature-heading {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls-ac);
-    padding-bottom: var(--scale-10);
-    margin-bottom: var(--scale-24);
-  }
-}
-
-@media only screen and (max-width: 1600px) {
-  .big-feature-heading {
-    font-size: var(--font-12);
-    line-height: var(--font-12-lh);
-    letter-spacing: var(--font-12-ls-ac);
-    padding-bottom: var(--scale-8);
-    margin-bottom: var(--scale-20);
-  }
-}
-
-@media only screen and (max-width: 1280px) {
-  .big-feature-heading {
-    font-size: var(--font-12);
-    line-height: var(--font-12-lh);
-    letter-spacing: var(--font-12-ls-ac);
-    padding-bottom: var(--scale-8);
-    margin-bottom: var(--scale-16);
-  }
-}
-
+/* ----- Mobile (≤960px): 4:5 container ----- */
 @media only screen and (max-width: 960px) {
-  .big-feature-heading {
-    font-size: var(--font-12);
-    line-height: var(--font-12-lh);
-    letter-spacing: var(--font-12-ls-ac);
-    padding-bottom: var(--scale-8);
-    margin-bottom: var(--scale-16);
+  .big-feature-image {
+    aspect-ratio: 4 / 5;
+  }
+  .big-feature-image img {
+    height: 112.5%;        /* 4:5 image + 12.5% extra */
   }
 }
 
-@media only screen and (max-width: 480px) {
+/* ----- Small mobile (≤440px): keep 4:5 ----- */
+@media only screen and (max-width: 440px) {
+  .big-feature-image {
+    aspect-ratio: 4 / 5;
+  }
+  .big-feature-image img {
+    height: 112.5%;
+  }
+}
+
+/* ============================================================ */
+/* ===== CONTENT SCALING (based on split-media heading) ===== */
+/* ============================================================ */
+
+@media only screen and (min-width: 4096px) {
+  .big-feature-content {
+    width: 50vw;
+    max-width: 50vw;
+  }
   .big-feature-heading {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls-ac);
-    padding-bottom: var(--scale-12);
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls-ac);
+    padding-bottom: var(--scale-20);
     margin-bottom: var(--scale-32);
   }
-}
-
-@media only screen and (max-width: 320px) {
-  .big-feature-heading {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls-ac);
-    padding-bottom: var(--scale-12);
-    margin-bottom: var(--scale-24);
-  }
-}
-
-
-
-/* ============================================================ */
-/* ===== DESKTOP FONT SCALING (based on .accent-block) ===== */
-/* ============================================================ */
-
-/* ----- min-width: 4096px (ultra-large screens) ----- */
-@media only screen and (min-width: 4096px) {
   .big-feature-text {
-    font-size: var(--font-48);
-    line-height: var(--font-48-lh);
-    letter-spacing: var(--font-48-ls);
+    font-size: var(--font-56);
+    line-height: var(--font-56-lh);
+    letter-spacing: var(--font-56-ls);
     margin-bottom: var(--scale-96);
   }
 }
 
-/* ----- max-width: 4096px (1921–4096px) ----- */
+
 @media only screen and (max-width: 4096px) {
+  .big-feature-content {
+    width: 50vw;
+  }
+  .big-feature-heading {
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls-ac);
+    padding-bottom: var(--scale-16);
+    margin-bottom: var(--scale-40);
+  }
+  .big-feature-text {
+    font-size: var(--font-40);
+    line-height: var(--font-40-lh);
+    letter-spacing: var(--font-40-ls);
+    margin-bottom: var(--scale-96);
+  }
+}
+
+@media only screen and (max-width: 2560px) {
+  .big-feature-content {
+    width: 50vw;
+  }
+  .big-feature-heading {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls-ac);
+    padding-bottom: var(--scale-16);
+    margin-bottom: var(--scale-32);
+  }
   .big-feature-text {
     font-size: var(--font-40);
     line-height: var(--font-40-lh);
@@ -4066,8 +4069,17 @@ Contact Block (Independent)
   }
 }
 
-/* ----- max-width: 2560px (1921–2560px) ----- */
-@media only screen and (max-width: 2560px) {
+@media only screen and (max-width: 1920px) {
+  .big-feature-content {
+    width: 60vw;
+  }
+  .big-feature-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+    padding-bottom: var(--scale-10);
+    margin-bottom: var(--scale-40);
+  }
   .big-feature-text {
     font-size: var(--font-32);
     line-height: var(--font-32-lh);
@@ -4076,23 +4088,68 @@ Contact Block (Independent)
   }
 }
 
-/* ----- max-width: 1920px (1281–1920px) — matches base ----- */
-@media only screen and (max-width: 1920px) {
+@media only screen and (max-width: 1600px) {
+  .big-feature-content {
+    width: 60vw;
+  }
+  .big-feature-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+    padding-bottom: var(--scale-12);
+    margin-bottom: var(--scale-32);
+  }
   .big-feature-text {
-    font-size: var(--font-24);
-    line-height: var(--font-24-lh);
-    letter-spacing: var(--font-24-ls);
-    margin-bottom: var(--scale-72);
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls);
+    margin-bottom: var(--scale-64);
   }
 }
 
-/* ===== Mobile: ≤960px ===== */
+@media only screen and (max-width: 1280px) {
+  .big-feature-content {
+    width: 60vw;
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 2);
+  }
+  .big-feature-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+    padding-bottom: var(--scale-12);
+    margin-bottom: var(--scale-32);
+  }
+  .big-feature-text {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+    margin-bottom: var(--scale-56);
+  }
+}
 
 @media only screen and (max-width: 960px) {
-  .big-feature {
-    padding-left: calc(var(--menu-based-spacing));
-    padding-right: calc(var(--menu-based-spacing-right));
+  .big-feature-content {
+    width: 100%;
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 2);
   }
+  .big-feature-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+    padding-bottom: var(--scale-12);
+    margin-bottom: var(--scale-24);
+  }
+  .big-feature-text {
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls);
+    margin-bottom: var(--scale-64);
+  }
+}
+
+@media only screen and (max-width: 800px) {
   .big-feature-content {
     width: 100%;
     padding-top: calc(var(--menu-based-spacing) * 1.5);
@@ -4102,63 +4159,86 @@ Contact Block (Independent)
     font-size: var(--font-14);
     line-height: var(--font-14-lh);
     letter-spacing: var(--font-14-ls-ac);
+    padding-bottom: var(--scale-10);
+    margin-bottom: var(--scale-32);
   }
   .big-feature-text {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
+    margin-bottom: var(--scale-64);
   }
 }
 
-/* ===== Below 480px ===== */
+@media only screen and (max-width: 640px) {
+  .big-feature-content {
+    width: 100%;
+    padding-top: calc(var(--menu-based-spacing) * 2);
+    padding-bottom: calc(var(--menu-based-spacing) * 2.5);
+  }
+  .big-feature-heading {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls-ac);
+    padding-bottom: var(--scale-10);
+    margin-bottom: var(--scale-32);
+  }
+  .big-feature-text {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+    margin-bottom: var(--scale-56);
+  }
+}
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 440px) {
   .big-feature {
     padding-left: var(--global-spacing-lr);
     padding-right: var(--global-spacing-lr);
   }
   .big-feature-content {
-    padding-top: calc(var(--global-spacing-lr) * 2);
-    padding-bottom: calc(var(--global-spacing-lr) * 2.5);
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
   }
-  .big-feature-heading {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls-ac);
-  }
-  .big-feature-text {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls);
-    margin-bottom: var(--scale-56);
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .big-feature-text {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls);
-  }
-}
-
-@media only screen and (max-width: 320px) {
   .big-feature-heading {
     font-size: var(--font-16);
     line-height: var(--font-16-lh);
     letter-spacing: var(--font-16-ls-ac);
+    padding-bottom: var(--scale-12);
+    margin-bottom: var(--scale-32);
   }
   .big-feature-text {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls);
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+    margin-bottom: var(--scale-48);
   }
 }
 
 
-
-
-
+@media only screen and (max-width: 400px) {
+  .big-feature {
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);
+  }
+  .big-feature-content {
+    padding-top: calc(var(--global-spacing-lr) * 4);
+    padding-bottom: calc(var(--global-spacing-lr) * 5);
+  }
+  .big-feature-heading {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls-ac);
+    padding-bottom: var(--scale-10);
+    margin-bottom: var(--scale-24);
+  }
+  .big-feature-text {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+    margin-bottom: var(--scale-48);
+  }
+}
 
 
 /* ------------------------------------------------------------------------------- */
@@ -4209,3 +4289,53 @@ Contact Block (Independent)
 .parallax-4-5 {
   aspect-ratio: 4 / 5;    /* portrait */
 }
+
+/* PARALLAX MODIFIERS FOR SPECIFIC BLOCKS */ 
+/* below is parallax controllers for specific blocks to fine-tune parallax depending on blocks features */ 
+
+/* ------------------------------------------------------------------------------- */
+/* BIG FEATURE PARALLAX (optional) — adds parallax movement */
+/* ------------------------------------------------------------------------------- */
+
+.big-feature-parallax img {
+  will-change: transform;
+  transition: none;       /* controlled by JS */
+}
+
+/* ------------------------------------------------------------------------------- */
+/* ===== SPLIT PARALLAX (optional) ===== */
+/* ------------------------------------------------------------------------------- */
+
+.split-parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.split-parallax img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  will-change: transform;
+}
+
+.split-parallax img.parallax-strong {
+  height: 133.33%;
+}
+
+.split-parallax img.parallax-subtle {
+  height: 112.5%;
+}
+
+@media (max-width: 960px) {
+  .split-parallax img {
+    height: 112.5%;
+  }
+}
+
+
+

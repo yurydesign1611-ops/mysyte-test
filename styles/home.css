@@ -14,8 +14,8 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 .home-intro {
   width: 100%;
   background-color: var(--OFFWHITE);
-  padding-top: 12vh;
-  padding-bottom: 12vh;
+  padding-top: calc(var(--menu-based-spacing) * 1.33);
+  padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   padding-left: var(--global-spacing-lr);
   padding-right: var(--global-spacing-lr);
   display: flex;
@@ -72,19 +72,19 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media only screen and (min-width: 4096px) {
   .home-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.75);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.8);
   }
   .home-intro-heading {
-    font-size: var(--font-64);
-    line-height: var(--font-64-lh);
-    letter-spacing: var(--font-64-ls);
-    margin-bottom: var(--scale-80);
+    font-size: var(--font-72);
+    line-height: var(--font-72-lh);
+    letter-spacing: var(--font-72-ls);
+    margin-bottom: var(--scale-96);
   }
   .home-intro .supertitle {
-    font-size: var(--font-24);
-    line-height: var(--font-24-lh);
-    letter-spacing: var(--font-24-ls-ac);
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls-ac);
     margin-bottom: var(--scale-24);
   }
 }
@@ -186,8 +186,8 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media only screen and (max-width: 960px) {
   .home-intro {
-    padding-top: 12vh;
-    padding-bottom: 12vh;
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
   }
   .home-intro-heading {
     font-size: var(--font-24);
@@ -205,8 +205,8 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media only screen and (max-width: 640px) {
   .home-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
   }
   .home-intro-heading {
     font-size: var(--font-20);
@@ -218,8 +218,8 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media only screen and (max-width: 480px) {
   .home-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
   }
   .home-intro-heading {
     font-size: var(--font-32);
@@ -237,8 +237,8 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media only screen and (max-width: 400px) {
   .home-intro {
-    padding-top: 12vh;
-    padding-bottom: 12vh;
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
   }
   .home-intro-heading {
     font-size: var(--font-24);
