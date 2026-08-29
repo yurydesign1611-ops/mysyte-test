@@ -68,18 +68,25 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
   width: var(--scale-56);
 }
 
+/* Altering home works block in home */ 
+.home-works {
+  padding-top: 0;
+}
+
+
+
 /* ===== Intro Media Queries ===== */
 
 @media only screen and (min-width: 4096px) {
   .home-intro {
-    padding-top: calc(var(--menu-based-spacing) * 1.75);
-    padding-bottom: calc(var(--menu-based-spacing) * 1.8);
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .home-intro-heading {
     font-size: var(--font-72);
     line-height: var(--font-72-lh);
     letter-spacing: var(--font-72-ls);
-    margin-bottom: var(--scale-96);
+    margin-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .home-intro .supertitle {
     font-size: var(--font-32);
@@ -91,14 +98,14 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media only screen and (max-width: 4096px) {
   .home-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .home-intro-heading {
     font-size: var(--font-48);
     line-height: var(--font-48-lh);
     letter-spacing: var(--font-48-ls);
-    margin-bottom: var(--scale-72);
+    margin-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .home-intro .supertitle {
     font-size: var(--font-32);
@@ -110,14 +117,14 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media only screen and (max-width: 2560px) {
   .home-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .home-intro-heading {
     font-size: var(--font-40);
     line-height: var(--font-40-lh);
     letter-spacing: var(--font-40-ls);
-    margin-bottom: var(--scale-72);
+    margin-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .home-intro .supertitle {
     font-size: var(--font-24);
@@ -129,14 +136,14 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media only screen and (max-width: 1920px) {
   .home-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .home-intro-heading {
     font-size: var(--font-32);
     line-height: var(--font-32-lh);
     letter-spacing: var(--font-32-ls);
-    margin-bottom: 5vh;
+    margin-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .home-intro .supertitle {
     font-size: var(--font-24);
@@ -148,14 +155,14 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media only screen and (max-width: 1600px) {
   .home-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .home-intro-heading {
     font-size: var(--font-32);
     line-height: var(--font-32-lh);
     letter-spacing: var(--font-32-ls);
-    margin-bottom: 5vh;
+    margin-bottom: calc(var(--menu-based-spacing) * 1); 
   }
   .home-intro .supertitle {
     font-size: var(--font-20);
@@ -167,14 +174,14 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 
 @media only screen and (max-width: 1280px) {
   .home-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .home-intro-heading {
     font-size: var(--font-24);
     line-height: var(--font-24-lh);
     letter-spacing: var(--font-24-ls);
-    margin-bottom: 4vh;
+    margin-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .home-intro .supertitle {
     font-size: var(--font-16);
@@ -187,13 +194,13 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 @media only screen and (max-width: 960px) {
   .home-intro {
     padding-top: calc(var(--global-spacing-lr) * 3.33);
-    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
+    padding-bottom: calc(var(--global-spacing-lr) * 1.25);
   }
   .home-intro-heading {
     font-size: var(--font-24);
     line-height: var(--font-24-lh);
     letter-spacing: var(--font-24-ls);
-    margin-bottom: 5vh;
+    margin-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .home-intro .supertitle {
     font-size: var(--font-14);
@@ -206,26 +213,26 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 @media only screen and (max-width: 640px) {
   .home-intro {
     padding-top: calc(var(--global-spacing-lr) * 3.33);
-    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
+    padding-bottom: calc(var(--global-spacing-lr) * 1.25);
   }
   .home-intro-heading {
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
-    margin-bottom: 5vh;
+    margin-bottom: calc(var(--menu-based-spacing) * 1);
   }
 }
 
 @media only screen and (max-width: 480px) {
   .home-intro {
     padding-top: calc(var(--global-spacing-lr) * 3.33);
-    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
+    padding-bottom: calc(var(--global-spacing-lr) * 1.25);
   }
   .home-intro-heading {
     font-size: var(--font-32);
     line-height: var(--font-32-lh);
     letter-spacing: var(--font-32-ls);
-    margin-bottom: 5vh;
+    margin-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .mobile-only {
     display: inline;
@@ -238,13 +245,13 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
 @media only screen and (max-width: 400px) {
   .home-intro {
     padding-top: calc(var(--global-spacing-lr) * 3.33);
-    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
+    padding-bottom: calc(var(--global-spacing-lr) * 1.25);
   }
   .home-intro-heading {
     font-size: var(--font-24);
     line-height: var(--font-24-lh);
     letter-spacing: var(--font-24-ls);
-    margin-bottom: 5vh;
+    margin-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .mobile-only {
     display: inline;
@@ -253,3 +260,8 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
     display: none;
   }
 }
+
+.big-feature {
+ padding-top: calc(var(--menu-based-spacing) * 1.25);
+}
+

@@ -7,8 +7,8 @@
   background-color: var(--OFFWHITE);
   padding-top: 20vh;
   padding-bottom: 20vh;
-  padding-left: var(--global-spacing-lr);
-  padding-right: var(--global-spacing-lr);
+  padding-top: calc(var(--menu-based-spacing) * 1.33);
+  padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,8 +73,8 @@
 
 @media only screen and (min-width: 4096px) {
   .production-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .production-intro-heading {
     font-size: var(--font-64);
@@ -89,8 +89,8 @@
 
 @media only screen and (max-width: 4096px) {
   .production-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .production-intro-heading {
     font-size: var(--font-48);
@@ -105,8 +105,8 @@
 
 @media only screen and (max-width: 2560px) {
   .production-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .production-intro-content {
     width: 60vw;
@@ -121,8 +121,8 @@
 
 @media only screen and (max-width: 1920px) {
   .production-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .production-intro-heading {
     font-size: var(--font-24);
@@ -137,8 +137,8 @@
 
 @media only screen and (max-width: 1600px) {
   .production-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .production-intro-heading {
     font-size: var(--font-24);
@@ -153,8 +153,8 @@
 
 @media only screen and (max-width: 1280px) {
   .production-intro {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .production-intro-heading {
     font-size: var(--font-24);
@@ -169,8 +169,8 @@
 
 @media only screen and (max-width: 960px) {
   .production-intro {
-    padding-top: 12vh;
-    padding-bottom: 12vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .production-intro-heading {
     font-size: var(--font-24);
@@ -187,8 +187,8 @@
   .production-intro {
     display: flex;
     align-items: center;
-    padding-left: calc(var(--global-spacing-lr) + var(--menu-icon-1-width) + var(--menu-icon-spacing));
-    padding-right: calc(var(--global-spacing-lr) + var(--menu-icon-2-width) + var(--menu-icon-spacing));
+    padding-left: var(--menu-based-spacing);
+    padding-right: var(--menu-based-spacing);
     justify-content: flex-start;
   }
   .production-intro-content {
@@ -214,8 +214,8 @@
 
 @media only screen and (max-width: 640px) {
   .production-intro {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 2);
   }
   .production-intro-heading {
     font-size: var(--font-20);
@@ -227,8 +227,8 @@
 
 @media only screen and (max-width: 480px) {
   .production-intro {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: calc(var(--menu-based-spacing) * 1);
+    padding-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .production-intro-heading {
     font-size: var(--font-20);
@@ -240,8 +240,10 @@
 
 @media only screen and (max-width: 440px) {
   .production-intro {
-    padding-top: 12vh;
-    padding-bottom: 12vh;
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);    
   }
   .production-intro-heading {
     font-size: var(--font-20);

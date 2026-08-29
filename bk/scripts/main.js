@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const imageStates = [];
 
   parallaxImages.forEach(img => {
-    const container = img.closest('.parallax-container, .split-parallax, .big-feature-parallax');
+    const container = img.closest('.parallax-container, .split-parallax, .big-feature-parallax, .image-hero-parallax');
     if (!container) return;
 
     imageStates.push({
