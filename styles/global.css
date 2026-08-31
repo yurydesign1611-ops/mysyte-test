@@ -4129,7 +4129,7 @@ Contact Block (Independent)
     padding-right: var(--menu-based-spacing);
   }
   .big-feature-image {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 1 / 1;
   }
   .big-feature-image img {
     height: 112.5%;        /* 4:5 image + 12.5% extra */
