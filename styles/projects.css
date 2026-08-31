@@ -13,7 +13,7 @@
 /* ------------------------------------------------------------------------------- */
 
 .projects-content {
-  padding-top: var(--scale-128);
+  padding-top: calc(var(--menu-based-spacing) * 1.33);
   padding-bottom: var(--global-spacing-lr);
   padding-left: var(--global-spacing-lr);
   padding-right: var(--global-spacing-lr);

@@ -2178,10 +2178,10 @@ WORKS EXAMPLES / PORTFOLIO / SAME FOR ALL PAGES
 .home-works {
   width: 100%;
   background-color: var(--OFFWHITE);
-  padding-top: var(--scale-160);
-  padding-right: var(--global-spacing-lr);
-  padding-bottom: var(--scale-160);
-  padding-left: var(--global-spacing-lr);
+  padding-top: calc(var(--menu-based-spacing) * 1.33);
+  padding-bottom: calc(var(--menu-based-spacing) * 1.66);
+  padding-left: calc(var(--menu-based-spacing));
+  padding-right: calc(var(--menu-based-spacing-right));
 }
 
 .home-works-content {
@@ -2263,11 +2263,28 @@ WORKS EXAMPLES / PORTFOLIO / SAME FOR ALL PAGES
   width: var(--scale-320);
 }
 
+
+/* Large screens: font scaling */
+@media (min-width: 4096px) {
+  .home-works {
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
+  }
+  .home-works-intro {
+    margin-bottom: var(--scale-160);
+  }
+  .home-works-text {
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls);
+  }
+}
+
 /* Large screens: font scaling */
 @media (max-width: 4096px) {
   .home-works {
-    padding-top: var(--scale-192);
-    padding-bottom: var(--scale-192);
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .home-works-intro {
     margin-bottom: var(--scale-160);
@@ -2306,8 +2323,8 @@ WORKS EXAMPLES / PORTFOLIO / SAME FOR ALL PAGES
 
 @media (max-width: 1920px) {
   .home-works {
-    padding-top: var(--scale-160);
-    padding-bottom: var(--scale-160);
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .home-works-intro {
     margin-bottom: var(--scale-128);
@@ -2320,12 +2337,10 @@ WORKS EXAMPLES / PORTFOLIO / SAME FOR ALL PAGES
   }
 }
 
-
 @media (max-width: 1600px) {
   .home-works {
-    padding-top: var(--scale-160);
-    padding-bottom: var(--scale-160);
-    padding-left: var(--global-spacing-lr);
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .home-works-intro {
     margin-bottom: var(--scale-128);
@@ -2339,8 +2354,8 @@ WORKS EXAMPLES / PORTFOLIO / SAME FOR ALL PAGES
 
 @media (max-width: 1280px) {
   .home-works {
-    padding-top: var(--scale-128);
-    padding-bottom: var(--scale-160);
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
     padding-left: var(--global-spacing-lr);
   }
   .home-works-intro {
@@ -2363,9 +2378,9 @@ WORKS EXAMPLES / PORTFOLIO / SAME FOR ALL PAGES
     padding-right:  var(--menu-based-spacing);
   }
   .home-works-text {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
     width: 75vw;
   }
   .home-works-cards {
@@ -2445,7 +2460,6 @@ WORKS EXAMPLES / PORTFOLIO / SAME FOR ALL PAGES
 EVERY PAGE SPECIALIZED COMPONENTS. FOOTER / MODAL / CONTACT BLOCK 
 ----------------------------------------------------------------------------
 /* ********************************************************************** */
-
 
 /*
 ----------------------------------------------------------------------------
@@ -2845,8 +2859,8 @@ Contact Block (Independent)
   .contact-block-text {
     aspect-ratio: auto;
     min-height: auto;
-    padding-top: 12vh;
-    padding-bottom: 12vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 2);
     padding-left: 0;
   }
   .contact-block-content {
@@ -2870,8 +2884,8 @@ Contact Block (Independent)
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.75);
   }
   .contact-block-content {
     display: flex;
@@ -2957,10 +2971,10 @@ Contact Block (Independent)
 .footer-content {
   width: 100%;
   flex: 1;
-  padding-top: calc(var(--global-spacing-lr) / 1.25);
-  padding-right: var(--global-spacing-lr);
-  padding-bottom: calc(var(--global-spacing-lr) * 1.2);
+  padding-top: calc(var(--menu-based-spacing) * 0.75);
+  padding-bottom: calc(var(--menu-based-spacing) * 1);
   padding-left: var(--global-spacing-lr);
+  padding-right: var(--global-spacing-lr);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -3080,10 +3094,6 @@ Contact Block (Independent)
   .footer-content {
     width: 100%;
     flex: 1;
-    padding-top: calc(var(--global-spacing-lr) / 1.25);
-    padding-right: var(--global-spacing-lr);
-    padding-bottom: calc(var(--global-spacing-lr) * 1.2);
-    padding-left: var(--global-spacing-lr);
   }
   /* DESKTOP: */
   .footer-logo {
@@ -3138,10 +3148,6 @@ Contact Block (Independent)
   .footer-content {
     width: 100%;
     flex: 1;
-    padding-top: calc(var(--global-spacing-lr) / 1.25);
-    padding-right: var(--global-spacing-lr);
-    padding-bottom: calc(var(--global-spacing-lr) * 1.2);
-    padding-left: var(--global-spacing-lr);
   }
   /* DESKTOP: */
   .footer-logo {
@@ -3191,14 +3197,10 @@ Contact Block (Independent)
   .footer-content {
     width: 100%;
     flex: 1;
-    padding-top: calc(var(--global-spacing-lr) / 1.25);
-    padding-right: var(--global-spacing-lr);
-    padding-bottom: calc(var(--global-spacing-lr) * 1.2);
-    padding-left: var(--global-spacing-lr);
   }
   /* DESKTOP: */
   .footer-logo {
-    margin-right: calc(var(--global-spacing-lr) * 1.5);
+    margin-right: var(--menu-based-spacing);
   }
   .footer-logo img {
     width: calc(var(--scale-1) * 192);
@@ -3206,7 +3208,7 @@ Contact Block (Independent)
   
 /* Margin after first block */ 
   .footer-info-block:first-child {
-    margin-right: calc(var(--global-spacing-lr) * 0.75);
+    margin-right: var(--menu-based-spacing);
   }
 
   .footer-info-block .footer-heading {
@@ -3248,21 +3250,17 @@ Contact Block (Independent)
   .footer-content {
     width: 100%;
     flex: 1;
-    padding-top: calc(var(--global-spacing-lr) * 1);
-    padding-right: var(--global-spacing-lr);
-    padding-bottom: calc(var(--global-spacing-lr) * 1.25);
-    padding-left: var(--global-spacing-lr);
   }
   /* DESKTOP: */
   .footer-logo {
-    margin-right: calc(var(--global-spacing-lr) * 2);
+    margin-right: calc(var(--menu-based-spacing) * 1.33);
   }
   .footer-logo img {
-    width: calc(var(--scale-1) * 160);
+    width: calc(var(--scale-1) * 240);
   }
 /* Margin after first block */ 
   .footer-info-block:first-child {
-    margin-right: calc(var(--global-spacing-lr) * 1);
+    margin-right: calc(var(--menu-based-spacing) * 1);
   }
 
   .footer-info-block .footer-heading {
@@ -3301,23 +3299,18 @@ Contact Block (Independent)
 
 
 @media (max-width: 1280px) {
-  .footer-content {
-    padding-top: calc(var(--global-spacing-lr) * 2);
-    padding-right: calc(var(--global-spacing-lr) * 2);
-    padding-bottom: calc(var(--global-spacing-lr) * 2);
-    padding-left: calc(var(--global-spacing-lr) * 2);
-  }
   .footer-main-items {
     flex-wrap: wrap; /* Magic trick: allows children to wrap to new rows */
+    margin-bottom: calc(var(--menu-based-spacing) * 1.33);
   }
   .footer-logo {
     width: 100%; /* Forces logo to its own top row */
     margin-right: 0;
-    margin-bottom: calc(var(--global-spacing-lr) * 1.5);
+    margin-bottom: calc(var(--menu-based-spacing) * 1.25);
   }
   .footer-information-blocks {
     flex: 1; /* Takes available left space on the second row */
-    margin-right: var(--global-spacing-lr);
+    margin-right: calc(var(--menu-based-spacing) * 1.25);
   }
   .footer-logo img {
     width: calc(var(--scale-1) * 280);
@@ -3335,7 +3328,8 @@ Contact Block (Independent)
 
 @media (max-width: 960px) {
   .footer-content {
-    padding-top: calc(var(--menu-top-h) * 2 + var(--global-spacing-lr));
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.75);
   }
   .footer-logo img {
     width: calc(var(--scale-1) * 240);
@@ -3352,14 +3346,15 @@ Contact Block (Independent)
     height: auto;
   }  
   .footer-content {
-    padding-top: calc(var(--menu-top-h) * 2 + var(--global-spacing-lr));
-    padding-right: calc(var(--global-spacing-lr) * 2);
-    padding-bottom: calc(var(--global-spacing-lr) * 2);
-    padding-left: calc(var(--global-spacing-lr) * 2);
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-right: calc(var(--menu-based-spacing) * 1);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
+    padding-left: calc(var(--menu-based-spacing) * 1);
   }
   .footer-main-items {
     flex-direction: column;
     flex-wrap: nowrap;
+    margin-bottom: calc(var(--menu-based-spacing) * 2.5); 
   }
   .footer-logo {
     width: 100%;
@@ -3373,7 +3368,6 @@ Contact Block (Independent)
     flex-direction: column;
     width: 100%;
     margin-right: 0;
-    margin-bottom: calc(var(--global-spacing-lr) * 2.5); /* Space before up button */
   }
   .footer-info-block {
     width: 100%;  
@@ -3425,14 +3419,15 @@ Contact Block (Independent)
     height: auto;
   }  
   .footer-content {
-    padding-top: calc(var(--menu-top-h) * 2 + var(--global-spacing-lr));
-    padding-right: calc(var(--global-spacing-lr) * 2);
-    padding-bottom: calc(var(--global-spacing-lr) * 2);
-    padding-left: calc(var(--global-spacing-lr) * 2);
+    padding-top: calc(var(--menu-based-spacing) * 3);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.75);
+    padding-left: var(--menu-based-spacing);
+    padding-right: var(--menu-based-spacing);
   }
   .footer-main-items {
     flex-direction: column;
     flex-wrap: nowrap;
+    margin-bottom: calc(var(--menu-based-spacing) * 2); 
   }
   .footer-logo {
     width: 100%;
@@ -3446,14 +3441,13 @@ Contact Block (Independent)
     flex-direction: column;
     width: 100%;
     margin-right: 0;
-    margin-bottom: calc(var(--global-spacing-lr) * 2.5); /* Space before up button */
   }
   .footer-info-block {
     width: 100%;
   }
   .footer-info-block:first-child {
     margin-right: 0;
-    margin-bottom: calc(var(--global-spacing-lr) * 1.5); /* Space between links and contacts */
+    margin-bottom: calc(var(--menu-based-spacing) * 1); /* Space between links and contacts */
   }
   .footer-info-block .footer-heading {
     margin-bottom: var(--scale-16);
@@ -3485,7 +3479,7 @@ Contact Block (Independent)
 
 @media (max-width: 560px) {
   .footer-content {
-    padding-bottom: calc(var(--global-spacing-lr) * 2.5);
+    padding-bottom: calc(var(--global-spacing-lr) * 1);
   }
   .footer-main-items {
     flex-direction: column;
@@ -3536,8 +3530,10 @@ Contact Block (Independent)
 
 @media (max-width: 440px) {
   .footer-content {
-    padding-top: calc(var(--menu-top-h) * 1.75 + var(--global-spacing-lr));
-    padding-bottom: calc(var(--global-spacing-lr) * 2.5);
+    padding-top: calc(var(--menu-based-spacing) * 2.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.75);
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);
   }
   .footer-main-items {
     flex-direction: column;
@@ -3593,8 +3589,10 @@ Contact Block (Independent)
 
 @media (max-width: 400px) {
   .footer-content {
-    padding-top: calc(var(--menu-top-h) * 1.6 + var(--global-spacing-lr));
-    padding-bottom: calc(var(--global-spacing-lr) * 2.3);
+    padding-top: calc(var(--global-spacing-lr) * 5);
+    padding-bottom: calc(var(--global-spacing-lr) * 1.5);
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);
   }
   .footer-main-items {
     flex-direction: column;
@@ -3632,7 +3630,7 @@ Contact Block (Independent)
 }
 
 /* LAst edge case stuff */ 
-@media (max-width: 300px) {
+@media (max-width: 360px) {
   .footer-bottom-line {
     width: calc(var(--scale-1) * 350);
   }
@@ -3907,9 +3905,11 @@ Contact Block (Independent)
 
 .big-feature {
   width: 100%;
-  padding-left: calc(var(--menu-based-spacing));
-  padding-right: calc(var(--menu-based-spacing-right));
   background-color: var(--OFFWHITE);
+  padding-top: calc(var(--menu-based-spacing) * 1.33);
+  padding-bottom: calc(var(--menu-based-spacing) * 1.66);
+  padding-left: var(--menu-based-spacing);
+  padding-right: calc(var(--menu-based-spacing-right));
 }
 
 /* BIG FEATURE IMAGE — dedicated parent (independent of parallax) */
@@ -3940,8 +3940,7 @@ Contact Block (Independent)
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: calc(var(--menu-based-spacing) * 1.33);
-  padding-bottom: calc(var(--menu-based-spacing) * 1.66);
+  padding-top: calc(var(--menu-based-spacing) * 1);
 }
 
 .big-feature-heading {
@@ -3981,30 +3980,13 @@ Contact Block (Independent)
   align-self: flex-start;
 }
 
-
-/* ============================================================ */
-/* ===== IMAGE SCALING (separated for coninience ===== */
-/* ============================================================ */
-
-/* ----- Mobile (≤960px): 4:5 container ----- */
-@media only screen and (max-width: 960px) {
-  .big-feature-image {
-    aspect-ratio: 4 / 5;
-  }
-  .big-feature-image img {
-    height: 112.5%;        /* 4:5 image + 12.5% extra */
-  }
+/* altering class that removes top padding when needed */
+/* used when 2 big-pictures on page and one need padding and one doesn't */
+.big-feature-top {
+  padding-top: 0;
 }
 
-/* ----- Small mobile (≤440px): keep 4:5 ----- */
-@media only screen and (max-width: 440px) {
-  .big-feature-image {
-    aspect-ratio: 4 / 5;
-  }
-  .big-feature-image img {
-    height: 112.5%;
-  }
-}
+
 
 /* ============================================================ */
 /* ===== CONTENT SCALING (based on split-media heading) ===== */
@@ -4110,8 +4092,6 @@ Contact Block (Independent)
 @media only screen and (max-width: 1280px) {
   .big-feature-content {
     width: 60vw;
-    padding-top: calc(var(--menu-based-spacing) * 1.5);
-    padding-bottom: calc(var(--menu-based-spacing) * 2);
   }
   .big-feature-heading {
     font-size: var(--font-16);
@@ -4128,11 +4108,46 @@ Contact Block (Independent)
   }
 }
 
+/* ============================================================ */
+/* ===== IMAGE SCALING AND MOBILE LAYOUT (separated here)  ==== */
+/* ============================================================ */
+
+/* ----- Mobile (≤960px): 3:2 container ----- */
 @media only screen and (max-width: 960px) {
+  .big-feature {
+    width: 100%;
+    background-color: var(--OFFWHITE);
+    /*image now 100% width */ 
+    padding: 0;   /* Now whole block defined by it's content */
+  }
+/* ----- Mobile padding used for content----- */
   .big-feature-content {
     width: 100%;
     padding-top: calc(var(--menu-based-spacing) * 1.5);
     padding-bottom: calc(var(--menu-based-spacing) * 2);
+    padding-left: var(--menu-based-spacing);
+    padding-right: var(--menu-based-spacing);
+  }
+  .big-feature-image {
+    aspect-ratio: 3 / 2;
+  }
+  .big-feature-image img {
+    height: 112.5%;        /* 4:5 image + 12.5% extra */
+  }
+}
+
+/* ----- Small mobile (≤440px): keep 4:5 ----- */
+@media only screen and (max-width: 440px) {
+  .big-feature-image {
+    aspect-ratio: 4 / 5;
+  }
+  .big-feature-image img {
+    height: 112.5%;
+  }
+}
+
+
+@media only screen and (max-width: 960px) {
   }
   .big-feature-heading {
     font-size: var(--font-16);
@@ -4142,19 +4157,14 @@ Contact Block (Independent)
     margin-bottom: var(--scale-24);
   }
   .big-feature-text {
-    font-size: var(--font-32);
-    line-height: var(--font-32-lh);
-    letter-spacing: var(--font-32-ls);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
     margin-bottom: var(--scale-64);
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .big-feature-content {
-    width: 100%;
-    padding-top: calc(var(--menu-based-spacing) * 1.5);
-    padding-bottom: calc(var(--menu-based-spacing) * 2);
-  }
   .big-feature-heading {
     font-size: var(--font-14);
     line-height: var(--font-14-lh);
