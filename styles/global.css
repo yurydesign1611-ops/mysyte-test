@@ -258,8 +258,8 @@ Typography scaling
   --font-16-ls: calc(var(--scale-coef) * 0.20);
   --font-20-ls: calc(var(--scale-coef) * 0.14);
   --font-24-ls: calc(var(--scale-coef) * 0);
-  --font-32-ls: calc(var(--scale-coef) * -0.11);
-  --font-40-ls: calc(var(--scale-coef) * -0.14);
+  --font-32-ls: calc(var(--scale-coef) * -0.01);
+  --font-40-ls: calc(var(--scale-coef) * -0.12);
   --font-48-ls: calc(var(--scale-coef) * -0.16);
   --font-56-ls: calc(var(--scale-coef) * -0.20);
   --font-64-ls: calc(var(--scale-coef) * -0.25);
@@ -1905,60 +1905,24 @@ UI components
   }
 }
 
-
-
-
 /* ------------------------------------------------------------------------------- */
-/* REUSABLE BASIC SMALL COMPONENTS 
+/* REUSABLE BASIC COMPONENTS 
 /* ------------------------------------------------------------------------------- */
 /* ******************************************************************************* */
 
 /* ------------------------------------------------------------------------------- */
-/* IMAGE HERO – reusable full‑width image with cropping control */
-/* ------------------------------------------------------------------------------- */
-
-.image-hero {
-  position: relative;
-  width: 100%;
-  height: var(--scale-720); /* default height, can be overridden */
-  overflow: hidden;
-  background-color: var(--NOIR);
-}
-
-.image-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-/* At ≤1280px: cropping on width, height stays fixed (height‑based) */
-@media (max-width: 1280px) {
-  .image-hero {
-    height: var(--scale-720);
-  }
-}
-
-/* At ≤960px: full‑screen height */
-@media (max-width: 960px) {
-  .image-hero {
-    height: 100vh;
-  }
-}
-
-/* ------------------------------------------------------------------------------- */
-/* VIDEO HERO – reusable full‑width image with cropping control */
+/* HERO IMAGE AND VIDEO 
 /* ------------------------------------------------------------------------------- */
 
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  aspect-ratio: 16 / 9;    /* Desktop default */
   overflow: hidden;
   background-color: var(--NOIR);
 }
 
+/* Video */ 
 .hero-video {
   position: absolute;
   inset: 0;
@@ -1966,12 +1930,58 @@ UI components
   height: 100%;
   object-fit: cover;
   object-position: center;
-  /* ensure no gaps */
   left: 0;
   right: 0;
   margin: 0;
   padding: 0;
 }
+
+/* Image */ 
+.image-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;    /* Desktop default */
+  overflow: hidden;
+  background-color: var(--NOIR);
+}
+
+.image-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ===== Tablet: 4:3 ===== */
+@media (max-width: 960px) {
+  .hero,
+  .image-hero {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ===== Mobile: 4:5 ===== */
+@media (max-width: 640px) {
+  .hero,
+  .image-hero {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* ===== Mobile: 4:5 ===== */
+@media (max-width: 640px) {
+  .hero,
+  .image-hero {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+
+
+
 
 
 /* ------------------------------------------------------------------------------- */
@@ -4044,16 +4054,16 @@ Contact Block (Independent)
     margin-bottom: var(--scale-32);
   }
   .big-feature-text {
-    font-size: var(--font-40);
-    line-height: var(--font-40-lh);
-    letter-spacing: var(--font-40-ls);
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls);
     margin-bottom: var(--scale-80);
   }
 }
 
 @media only screen and (max-width: 1920px) {
   .big-feature-content {
-    width: 60vw;
+    width: 50vw;
   }
   .big-feature-heading {
     font-size: var(--font-16);
@@ -4063,9 +4073,9 @@ Contact Block (Independent)
     margin-bottom: var(--scale-40);
   }
   .big-feature-text {
-    font-size: var(--font-32);
-    line-height: var(--font-32-lh);
-    letter-spacing: var(--font-32-ls);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
     margin-bottom: var(--scale-72);
   }
 }
@@ -4082,9 +4092,9 @@ Contact Block (Independent)
     margin-bottom: var(--scale-32);
   }
   .big-feature-text {
-    font-size: var(--font-32);
-    line-height: var(--font-32-lh);
-    letter-spacing: var(--font-32-ls);
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
     margin-bottom: var(--scale-64);
   }
 }
@@ -4148,7 +4158,6 @@ Contact Block (Independent)
 
 
 @media only screen and (max-width: 960px) {
-  }
   .big-feature-heading {
     font-size: var(--font-16);
     line-height: var(--font-16-lh);
