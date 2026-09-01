@@ -4134,7 +4134,7 @@ Contact Block (Independent)
   .big-feature-content {
     width: 100%;
     padding-top: calc(var(--menu-based-spacing) * 1.5);
-    padding-bottom: calc(var(--menu-based-spacing) * 2);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.75);
     padding-left: var(--menu-based-spacing);
     padding-right: var(--menu-based-spacing);
   }

@@ -12,10 +12,10 @@
 
 
 .about-content {
-  padding-top: var(--scale-128);
-  padding-bottom: var(--scale-160);
-  padding-left: var(--global-spacing-lr);
-  padding-right: var(--global-spacing-lr);
+  padding-top: calc(var(--menu-based-spacing) * 1.33);
+  padding-bottom: calc(var(--menu-based-spacing) * 1.66);
+  padding-left: var(--menu-based-spacing);
+  padding-right: var(--menu-based-spacing);
   background-color: var(--OFFWHITE);
   display: flex;
   flex-direction: column;
@@ -142,10 +142,10 @@
 
 @media (max-width: 960px) {
   .about-content {
-    padding-top:  15vh;
-    padding-bottom: 20vh;
-    padding-left: calc(var(--global-spacing-lr) * 4);
-    padding-right: calc(var(--global-spacing-lr) * 4);
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.75);
+    padding-left: var(--menu-based-spacing);
+    padding-right: var(--menu-based-spacing);
   }
   .about-text,
   .about-facts {
@@ -160,10 +160,8 @@
 
 @media (max-width: 800px) {
   .about-content {
-    padding-top:  15vh;
-    padding-bottom: 20vh;
-    padding-left: calc(var(--global-spacing-lr) * 3);
-    padding-right: calc(var(--global-spacing-lr) * 3);
+    padding-top: calc(var(--menu-based-spacing) * 1.5);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.75);
     align-items: flex-start;
     justify-content: flex-start;
   }
@@ -186,10 +184,8 @@
 
 @media (max-width: 640px) {
   .about-content {
-    padding-top:  15vh;
-    padding-bottom: 20vh;
-    padding-left: calc(var(--global-spacing-lr) * 2);
-    padding-right: calc(var(--global-spacing-lr) * 2);
+    padding-top: calc(var(--menu-based-spacing) * 2);
+    padding-bottom: calc(var(--menu-based-spacing) * 2.5);
   }
   .about-text-body {
     font-size: var(--font-16);
@@ -205,12 +201,12 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
   .about-content {
-    padding-top:  10vh;
-    padding-bottom: 12vh;
-    padding-left: calc(var(--global-spacing-lr) * 2);
-    padding-right: calc(var(--global-spacing-lr) * 2);
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);
   }
   .about-text {
     margin-bottom: var(--scale-64);
