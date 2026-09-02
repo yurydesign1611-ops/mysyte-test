@@ -2104,8 +2104,6 @@ UI components
 @media only screen and (max-width: 960px) {
   .accent-block-content {
     width: 100%;
-    padding-left: var(--menu-based-spacing);
-    padding-right: var(--menu-based-spacing);
   }
   .accent-block {
     padding-top: calc(var(--menu-based-spacing) * 1.33);
@@ -2117,11 +2115,6 @@ UI components
     letter-spacing: var(--font-24-ls);
     margin-bottom: calc(var(--global-spacing-lr) * 1);
 
-  }
-  .accent-block-content {
-    width: 100%;
-    padding-left: var(--menu-based-spacing);
-    padding-right: var(--menu-based-spacing);
   }
 }
 
@@ -2142,7 +2135,7 @@ UI components
   .accent-block-btn {
     align-self: flex-start;
   }
-  
+
 }
 
 @media only screen and (max-width: 640px) {
@@ -2157,10 +2150,13 @@ UI components
   }
 }
 
-@media only screen and (max-width: 440) {
+@media only screen and (max-width: 440px) {
   .accent-block {
     padding-top: calc(var(--menu-based-spacing) * 1.33);
     padding-bottom: calc(var(--menu-based-spacing) * 1.66);
+  }
+  .accent-block-content {
+    width: 100%;
     padding-left: var(--global-spacing-lr);
     padding-right: var(--global-spacing-lr);
   }
@@ -4201,6 +4197,8 @@ Contact Block (Independent)
   .big-feature-content {
     padding-top: calc(var(--global-spacing-lr) * 3.33);
     padding-bottom: calc(var(--global-spacing-lr) * 3.66);
+    padding-left: 0;
+    padding-right: 0;
   }
   .big-feature-heading {
     font-size: var(--font-16);
