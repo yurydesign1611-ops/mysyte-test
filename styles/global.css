@@ -1971,13 +1971,6 @@ UI components
   }
 }
 
-/* ===== Mobile: 4:5 ===== */
-@media (max-width: 640px) {
-  .hero,
-  .image-hero {
-    aspect-ratio: 1 / 1;
-  }
-}
 
 
 

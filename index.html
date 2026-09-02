@@ -117,16 +117,24 @@
 <!-- MAIN ============================== -->
 <main>
 
-<!-- HERO VIDEO -->
+<!-- HERO VIDEO with responsive sources -->
 <section class="hero">
-  <video class="hero-video" 
-         autoplay 
-         muted 
-         playsinline 
-         loop 
-         preload="metadata" 
-         controlsList="nodownload" 
-         disablePictureInPicture>
+  <video class="hero-video"
+         autoplay
+         muted
+         playsinline
+         loop
+         preload="metadata"
+         controlsList="nodownload"
+         disablePictureInPicture
+         poster="video/home-vid-start-poster.avif">
+    <!-- Desktop: ≥1281px -->
+    <source src="video/start-hq.mp4" type="video/mp4" media="(min-width: 1281px)">
+    <!-- Tablet: 641px – 1280px -->
+    <source src="video/start-mq.mp4" type="video/mp4" media="(min-width: 641px)">
+    <!-- Mobile: ≤640px -->
+    <source src="video/start-lq.mp4" type="video/mp4" media="(max-width: 640px)">
+    <!-- Fallback for browsers that don't support media attribute -->
     <source src="video/start.mp4" type="video/mp4">
   </video>
 </section>
