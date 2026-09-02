@@ -2306,15 +2306,6 @@ WORKS EXAMPLES / PORTFOLIO / SAME FOR ALL PAGES
   }
 }
 
-/* This bottom contains only on industry related projects pages */
-.projects-button-all {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: calc(var(--global-spacing-lr) * 1.333);
-}
-
-
 /* Large screens: font scaling */
 @media (max-width: 2560px) {
   .home-works {
@@ -3908,7 +3899,6 @@ Contact Block (Independent)
 }
 
 
-
 /* ------------------------------------------------------------------------------- */
 /* BIG FEATURE – reusable block with big image + heading + text + optional button */
 /* ------------------------------------------------------------------------------- */
@@ -4156,7 +4146,6 @@ Contact Block (Independent)
   }
 }
 
-
 @media only screen and (max-width: 960px) {
   .big-feature-heading {
     font-size: var(--font-16);
@@ -4241,8 +4230,8 @@ Contact Block (Independent)
     padding-right: var(--global-spacing-lr);
   }
   .big-feature-content {
-    padding-top: calc(var(--global-spacing-lr) * 4);
-    padding-bottom: calc(var(--global-spacing-lr) * 5);
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
   }
   .big-feature-heading {
     font-size: var(--font-14);
