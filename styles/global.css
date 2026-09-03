@@ -2097,6 +2097,8 @@ UI components
 @media only screen and (max-width: 960px) {
   .accent-block-content {
     width: 100%;
+    padding-left: var(--menu-based-spacing);
+    padding-right: var(--menu-based-spacing);
   }
   .accent-block {
     padding-top: calc(var(--menu-based-spacing) * 1.33);
@@ -2128,7 +2130,6 @@ UI components
   .accent-block-btn {
     align-self: flex-start;
   }
-
 }
 
 @media only screen and (max-width: 640px) {
