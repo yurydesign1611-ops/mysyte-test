@@ -1332,7 +1332,7 @@ UI components
   :root {
     --menu-font-size: var(--font-16);
     --menu-line-height: var(--font-16);
-    --menu-letter-spacing: var(--font-16-ac);
+    --menu-letter-spacing: var(--font-16-ls-ac);
   }
   .nav-list {
     padding-top: calc(var(--menu-top-h) + var(--global-spacing-lr) * 2);
