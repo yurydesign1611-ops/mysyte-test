@@ -555,7 +555,7 @@
 @media (max-width: 2560px) {
   .contact-info-content {
     padding-top: 15vh;
-    padding-bottom: 15vh;
+    padding-bottom: 16vh;
   }
   .contact-info-content-wrapper {
     width: fit-content;
@@ -621,7 +621,7 @@
 @media (max-width: 1280px) {
   .contact-info-content {
     padding-top: 15vh;
-    padding-bottom: 15vh;
+    padding-bottom: 16vh;
   }
   .contact-info-content-wrapper {
     width: fit-content;
