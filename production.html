@@ -115,11 +115,35 @@
 <!-- MAIN ============================== -->
 <main>
 
-<!-- HERO IMG -->
+<!-- PRODUCYTION NERO VIDEO with responsive sources -->
+<section class="hero">
+  <video class="hero-video"
+         autoplay
+         muted
+         playsinline
+         loop
+         preload="metadata"
+         controlsList="nodownload"
+         disablePictureInPicture
+         poster="video/prod-poster.avif">
+    <!-- Desktop: ≥1281px -->
+    <source src="video/prod-hq.mp4" type="video/mp4" media="(min-width: 1281px)">
+    <!-- Tablet: 641px – 1280px -->
+    <source src="video/prod-mq.mp4" type="video/mp4" media="(min-width: 641px)">
+    <!-- Mobile: ≤640px -->
+    <source src="video/prod-lq.mp4" type="video/mp4" media="(max-width: 640px)">
+    <!-- Fallback for browsers that don't support media attribute -->
+    <source src="video/start.mp4" type="video/mp4">
+  </video>
+</section>
+
+
+
+<!-- HERO IMG (ADDING VIDEO)
 <section class="image-hero image-hero-parallax">
   <img src="img/hero-production-hallway.avif" alt="Приоизводство и технологии" class="parallax-image parallax-strong" loading="lazy">
 </section>
-
+-->
 <!-- ======  PRODUCTION TECHNOLOGIES INTRO ====== -->
 <!-- ======  IT'S DIFFERENT FROM SIMILAR IN GLOBAL ====== -->
 <!-- this is intro, and style for it is in production.css -->
