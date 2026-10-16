@@ -241,7 +241,7 @@
 @media only screen and (max-width: 440px) {
   .production-intro {
     padding-top: calc(var(--global-spacing-lr) * 3.33);
-    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
+    padding-bottom: calc(var(--global-spacing-lr) * 4);
     padding-left: var(--global-spacing-lr);
     padding-right: var(--global-spacing-lr);    
   }
@@ -249,6 +249,21 @@
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
-    margin-bottom: 5vh;
+    margin-bottom: calc(var(--global-spacing-lr) * 1.66);
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .production-intro {
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 4.3);
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);    
+  }
+  .production-intro-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls);
+    margin-bottom: calc(var(--global-spacing-lr) * 1.66);
   }
 }

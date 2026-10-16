@@ -897,9 +897,7 @@ UI components
 /* Mobile screen-width minus margins */
 @media (max-width: 320px) {
   .button-ghost {
-    width: 100%;
-    margin-left: var(--global-spacing-lr);
-    margin-right: var(--global-spacing-lr);
+    width: fit-content;
   }
 }
 
@@ -1256,9 +1254,6 @@ UI components
     --menu-letter-spacing: var(--font-16-ls-ac);
   }
 }
-
-
-
 
 @media only screen and (max-width: 4096px) {
   :root {
@@ -1886,7 +1881,6 @@ UI components
   .split-text {
     padding-top: calc(var(--menu-based-spacing) * 1.33);     /* ← menu-based * 1.5 */
     padding-bottom: calc(var(--menu-based-spacing) * 1.66);    /* ← menu-based * 2 */
-    padding-left: calc(var(--global-spacing-lr) * 3);
   }
 }
 
@@ -2144,6 +2138,23 @@ UI components
 }
 
 @media only screen and (max-width: 440px) {
+  .accent-block {
+    padding-top: calc(var(--menu-based-spacing) * 1.33);
+    padding-bottom: calc(var(--menu-based-spacing) * 1.66);
+  }
+  .accent-block-content {
+    width: 100%;
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);
+  }
+  .accent-block-heading {
+    font-size: var(--font-20);      
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+  }
+}
+
+@media only screen and (max-width: 320px) {
   .accent-block {
     padding-top: calc(var(--menu-based-spacing) * 1.33);
     padding-bottom: calc(var(--menu-based-spacing) * 1.66);
@@ -2909,9 +2920,6 @@ Contact Block (Independent)
 }
 
 @media (max-width: 420px) {
-  .contact-block-body {
-    width: calc(var(--scale-1) * 340);
-  }
   .contact-block .button-ghost {
     display: none;
   }
@@ -2935,6 +2943,23 @@ Contact Block (Independent)
     margin-bottom: calc(var(--global-spacing-lr) * 1.2);
   }
 }
+
+@media (max-width: 320px) {
+  .contact-block-text {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+  .contact-block-body {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls);
+    margin-bottom: calc(var(--global-spacing-lr) * 1.2);
+  }
+}
+
 
 
 

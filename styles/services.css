@@ -169,7 +169,7 @@
 @media only screen and (max-width: 480px) {
   .services-intro {
     padding-top: 15vh;
-    padding-bottom: 15h;
+    padding-bottom: 15vh;
   }
   .services-intro-heading {
     font-size: var(--font-20);
@@ -181,14 +181,31 @@
 
 @media only screen and (max-width: 440px) {
   .services-intro {
-    padding-top: 15vh;
-    padding-bottom: 15vh;
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 4);
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);    
   }
   .services-intro-heading {
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
-    margin-bottom: 5vh;
+    margin-bottom: calc(var(--global-spacing-lr) * 1.66);
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .services-intro {
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 4);
+    padding-left: var(--global-spacing-lr);
+    padding-right: var(--global-spacing-lr);    
+  }
+  .services-intro-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls);
+    margin-bottom: calc(var(--global-spacing-lr) * 1.66);
   }
 }
 
