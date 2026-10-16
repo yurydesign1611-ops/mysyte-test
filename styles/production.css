@@ -5,8 +5,6 @@
 .production-intro {
   width: 100%;
   background-color: var(--OFFWHITE);
-  padding-top: 20vh;
-  padding-bottom: 20vh;
   padding-top: calc(var(--menu-based-spacing) * 1.33);
   padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   display: flex;

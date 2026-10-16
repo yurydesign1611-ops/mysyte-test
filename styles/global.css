@@ -141,37 +141,63 @@ Scale logic
 /* SCALING GOES FROM WIDER SCREENS TO NARROW *
 /* Same logic for all selectors */ 
 
-/* For screens from 1920 to 2560 */
-@media only screen and (max-width: 1920px) {
+
+/* Base: 440–1280 → flat 1px */
+:root {
+  --scale-coef: 0.0625rem;
+}
+
+/* ≥4096 — final big edge case, own steeper factor */
+@media only screen and (min-width: 4096px) {
+  :root {
+    --scale-coef: calc(0.16rem + (0.22 - 0.16) * ((100vw - 4096px) / (8192 - 4096)));
+  }
+}
+
+/* 2560–4096 — increased growth (was 0.133, now 0.16 at 4096) */
+@media only screen and (max-width: 4096px) {
+  :root {
+    --scale-coef: calc(0.0833rem + (0.16 - 0.0833) * ((100vw - 2560px) / (4096 - 2560)));
+  }
+}
+
+/* 1920–2560 */
+@media only screen and (max-width: 2560px) {
   :root {
     --scale-coef: calc(0.078125rem + (0.0833 - 0.078125) * ((100vw - 1920px) / (2560 - 1920)));
   }
 }
-/* For screens from 1280 to 1920 / from 1px to 1.25 px */
-@media only screen and (max-width: 1600px) {
+
+/* 1280–1920 */
+@media only screen and (max-width: 1920px) {
   :root {
-    --scale-coef: calc(0.0625rem + (0.078125 - 0.0625) * ((100vw - 1280px) / (1666 - 1280)));
+    --scale-coef: calc(0.0625rem + (0.078125 - 0.0625) * ((100vw - 1280px) / (1920 - 1280)));
   }
 }
-/* For screens from 320 to 440 */
+
+/* 440–1280 → re-assert flat 1px */
+@media only screen and (max-width: 1280px) {
+  :root {
+    --scale-coef: 0.0625rem;
+  }
+}
+
+/* 320–440 */
 @media only screen and (max-width: 440px) {
   :root {
     --scale-coef: calc(0.046875rem + (0.0625 - 0.046875) * ((100vw - 320px) / (440 - 320)));
   }
 }
-/* For screens from 200 to 320 — aggressive scaling */
+
+/* 200–320 — aggressive scaling */
 @media only screen and (max-width: 320px) {
   :root {
-     --scale-coef: calc(0.04rem + (0.046875 - 0.04) * ((100vw - 200px) / (320 - 200)));
+    --scale-coef: calc(0.04rem + (0.046875 - 0.04) * ((100vw - 200px) / (320 - 200)));
   }
 }
-/* Min-width rule is last and applied to all scales above 2560 */ 
-/* For screens from 2560 to 4096 and more */
-@media only screen and (min-width: 2560px) {
-  :root {
-    --scale-coef: calc(0.0833rem + (0.133 - 0.0833) * ((100vw - 2560px) / (4096 - 2560)));
-  }
-}
+
+
+
 /*
 Relative scale variables
 */
@@ -658,7 +684,7 @@ Typography
 }
 
 
-@media (max-width: 440) {
+@media (max-width: 440px) {
   .head-sec {
     font-size: var(--font-14);
     line-height: var(--font-14-lh);
@@ -666,16 +692,6 @@ Typography
     width: 75vw;
   }
 }
-
-@media (max-width: 440) {
-  .head-sec {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls);
-    width: 75vw;
-  }
-}
-
 
 .head-tri {
   width: fit-content;
@@ -735,7 +751,7 @@ Typography
     font-size: var(--font-14);
     line-height: var(--font-14-lh);
     letter-spacing: var(--font-14-ls);
-    width: width: 60vw;
+    width: 60vw;
   }
 }
 
@@ -748,7 +764,7 @@ Typography
   }
 }
 
-@media (max-width: 440) {
+@media (max-width: 440px) {
   .head-tri {
     font-size: var(--font-14);
     line-height: var(--font-14-lh);
@@ -833,7 +849,7 @@ Typography
   }
 }
 
-@media (max-width: 440) {
+@media (max-width: 440px) {
   .supertitle {
     font-size: var(--font-16);
     line-height: var(--font-16-lh);
@@ -1005,7 +1021,7 @@ UI components
   }
 }
 
-@media (max-width: 440) {
+@media (max-width: 440px) {
   .link {
     font-size: var(--font-16);
     line-height: var(--font-16-lh);
@@ -1645,16 +1661,16 @@ UI components
     letter-spacing: var(--font-14-ls-ac);
   }  
   .split-text-body {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+    margin-bottom: var(--scale-24);
+  }
+  .split-text-sub {
     font-size: var(--font-16);
     line-height: var(--font-16-lh);
     letter-spacing: var(--font-16-ls);
-    margin-bottom: var(--scale-16);
-  }
-  .split-text-sub {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls);
-    margin-bottom: var(--scale-32);
+    margin-bottom: var(--scale-48);
   }
   .split-text-link {
     font-size: var(--font-14);
@@ -1676,15 +1692,15 @@ UI components
     letter-spacing: var(--font-12-ls-ac);
   }  
   .split-text-body {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
+    margin-bottom: var(--scale-24);
+  }
+  .split-text-sub {
     font-size: var(--font-16);
     line-height: var(--font-16-lh);
     letter-spacing: var(--font-16-ls);
-    margin-bottom: var(--scale-20);
-  }
-  .split-text-sub {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls);
     margin-bottom: var(--scale-40);
   }
   .split-text-link {
@@ -1817,15 +1833,15 @@ UI components
     letter-spacing: var(--font-12-ls-ac);
   } 
   .split-text-body {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls);
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls);
     margin-bottom: var(--scale-24);
   }
   .split-text-sub {
-    font-size: var(--font-12);
-    line-height: var(--font-12-lh);
-    letter-spacing: var(--font-12-ls);
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
     margin-bottom: var(--scale-32);
   }
 }
@@ -2066,6 +2082,7 @@ UI components
   }
   .accent-block-content {
     width: 50vw;
+  }
 }
 
 @media only screen and (max-width: 2560px) {
@@ -2371,9 +2388,9 @@ WORKS EXAMPLES / PORTFOLIO / SAME FOR ALL PAGES
   }
   .home-works-text {
     width: 50vw;
-    font-size: var(--font-24);
-    line-height: var(--font-24-lh);
-    letter-spacing: var(--font-24-ls);
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls);
   }
 }
 
@@ -2841,16 +2858,16 @@ Contact Block (Independent)
 
 @media (max-width: 1920px) {
   .contact-block-body {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls);
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls);
     margin-bottom: var(--scale-40);
   }
   .contact-block-heading {
     margin-bottom: var(--scale-20);
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls-ac);
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls-ac);
   }
 }
 
@@ -2982,9 +2999,9 @@ Contact Block (Independent)
     width: 100%;
   }
   .contact-block-body {
-    font-size: var(--font-14);
-    line-height: var(--font-14-lh);
-    letter-spacing: var(--font-14-ls);
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls);
     margin-bottom: calc(var(--global-spacing-lr) * 1.2);
   }
 }
@@ -3775,22 +3792,10 @@ Contact Block (Independent)
     padding-bottom: calc(var(--menu-based-spacing) * 1.66);
   }
   .production-technologies-heading {
-    font-size: var(--font-64);
-    line-height: var(--font-64-lh);
-    letter-spacing: var(--font-64-ls);
-    margin-bottom: var(--scale-96);
-  }
-  .production-technologies-content {
-    width: 60vw;
-  }
-}
-
-@media only screen and (max-width: 4096px) {
-  .production-technologies-heading {
     font-size: var(--font-32);
     line-height: var(--font-32-lh);
     letter-spacing: var(--font-32-ls);
-    margin-bottom: var(--scale-72);
+    margin-bottom: var(--scale-80);
   }
   .production-technologies-content {
     width: 60vw;
@@ -3800,6 +3805,24 @@ Contact Block (Independent)
     font-size: var(--font-20);
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls-ac);
+  }
+}
+
+@media only screen and (max-width: 4096px) {
+  .production-technologies-heading {
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
+    margin-bottom: var(--scale-72);
+  }
+  .production-technologies-content {
+    width: 60vw;
+  }
+  .link-group .link {
+    padding-bottom: var(--scale-12);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls-ac);
   }
 }
 
@@ -3823,13 +3846,13 @@ Contact Block (Independent)
 
 @media only screen and (max-width: 1920px) {
   .production-technologies-heading {
-    font-size: var(--font-24);
-    line-height: var(--font-24-lh);
-    letter-spacing: var(--font-24-ls);
-    margin-bottom: var(--scale-48);
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls);
+    margin-bottom: var(--scale-64);
   }
   .production-technologies-content {
-    width: 50vw;
+    width: 60vw;
   }
   .link-group .link {
     padding-bottom: var(--scale-8);
@@ -4042,41 +4065,40 @@ Contact Block (Independent)
 
 @media only screen and (min-width: 4096px) {
   .big-feature-content {
-    width: 50vw;
-    max-width: 50vw;
-  }
-  .big-feature-heading {
-    font-size: var(--font-32);
-    line-height: var(--font-32-lh);
-    letter-spacing: var(--font-32-ls-ac);
-    padding-bottom: var(--scale-20);
-    margin-bottom: var(--scale-32);
-  }
-  .big-feature-text {
-    font-size: var(--font-56);
-    line-height: var(--font-56-lh);
-    letter-spacing: var(--font-56-ls);
-    margin-bottom: var(--scale-96);
-  }
-}
-
-
-@media only screen and (max-width: 4096px) {
-  .big-feature-content {
-    width: 50vw;
+    width: 60vw;
+    max-width: 60vw;
   }
   .big-feature-heading {
     font-size: var(--font-24);
     line-height: var(--font-24-lh);
     letter-spacing: var(--font-24-ls-ac);
     padding-bottom: var(--scale-16);
+    margin-bottom: var(--scale-32);
+  }
+  .big-feature-text {
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls);
+    margin-bottom: var(--scale-64);
+  }
+}
+
+@media only screen and (max-width: 4096px) {
+  .big-feature-content {
+    width: 60vw;
+  }
+  .big-feature-heading {
+    font-size: var(--font-20);
+    line-height: var(--font-20-lh);
+    letter-spacing: var(--font-20-ls-ac);
+    padding-bottom: var(--scale-16);
     margin-bottom: var(--scale-40);
   }
   .big-feature-text {
-    font-size: var(--font-40);
-    line-height: var(--font-40-lh);
-    letter-spacing: var(--font-40-ls);
-    margin-bottom: var(--scale-96);
+    font-size: var(--font-32);
+    line-height: var(--font-32-lh);
+    letter-spacing: var(--font-32-ls);
+    margin-bottom: var(--scale-64);
   }
 }
 
@@ -4092,10 +4114,10 @@ Contact Block (Independent)
     margin-bottom: var(--scale-32);
   }
   .big-feature-text {
-    font-size: var(--font-32);
-    line-height: var(--font-32-lh);
-    letter-spacing: var(--font-32-ls);
-    margin-bottom: var(--scale-80);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
+    margin-bottom: var(--scale-72);
   }
 }
 
@@ -4130,10 +4152,10 @@ Contact Block (Independent)
     margin-bottom: var(--scale-32);
   }
   .big-feature-text {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls);
-    margin-bottom: var(--scale-64);
+    font-size: var(--font-24);
+    line-height: var(--font-24-lh);
+    letter-spacing: var(--font-24-ls);
+    margin-bottom: var(--scale-72);
   }
 }
 
@@ -4317,9 +4339,9 @@ Contact Block (Independent)
     margin-bottom: var(--scale-24);
   }
   .big-feature-text {
-    font-size: var(--font-20);
-    line-height: var(--font-20-lh);
-    letter-spacing: var(--font-20-ls);
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls);
     margin-bottom: var(--scale-48);
   }
 }

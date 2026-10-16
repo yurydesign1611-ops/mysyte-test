@@ -76,10 +76,10 @@ HOME CSS. KVARTZ WEBSITE since 21.05.2026
     padding-bottom: calc(var(--menu-based-spacing) * 1.25);
   }
   .home-intro-heading {
-    font-size: var(--font-72);
-    line-height: var(--font-72-lh);
-    letter-spacing: var(--font-72-ls);
-    margin-bottom: calc(var(--menu-based-spacing) * 0.1);
+    font-size: var(--font-56);
+    line-height: var(--font-56-lh);
+    letter-spacing: var(--font-56-ls);
+    margin-bottom: calc(var(--menu-based-spacing) * 1);
   }
   .home-intro .supertitle {
     font-size: var(--font-32);
