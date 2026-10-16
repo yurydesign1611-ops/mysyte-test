@@ -1805,11 +1805,37 @@ UI components
   }
 }
 
+@media (max-width: 400px) {
+  .split-heading-row {
+    width: 100%;
+    padding-bottom: calc(var(--scale-1) * 8);
+    margin-bottom: var(--scale-32);
+  }
+  .split-text-heading {
+    font-size: var(--font-12);
+    line-height: var(--font-12-lh);
+    letter-spacing: var(--font-12-ls-ac);
+  } 
+  .split-text-body {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+    margin-bottom: var(--scale-24);
+  }
+  .split-text-sub {
+    font-size: var(--font-12);
+    line-height: var(--font-12-lh);
+    letter-spacing: var(--font-12-ls);
+    margin-bottom: var(--scale-32);
+  }
+}
+
+
 @media (max-width: 320px) {
   .split-heading-row {
     width: 100%;
     padding-bottom: calc(var(--scale-1) * 8);
-    margin-bottom: var(--scale-24);
+    margin-bottom: var(--scale-32);
   }
   .split-text-heading {
     font-size: var(--font-16);
@@ -4218,6 +4244,32 @@ Contact Block (Independent)
     line-height: var(--font-20-lh);
     letter-spacing: var(--font-20-ls);
     margin-bottom: var(--scale-56);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .big-feature {
+    padding-left: calc(var(--menu-based-spacing) * 1);
+    padding-right: calc(var(--menu-based-spacing) * 1);
+  }
+  .big-feature-content {
+    padding-top: calc(var(--global-spacing-lr) * 3.33);
+    padding-bottom: calc(var(--global-spacing-lr) * 3.66);
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .big-feature-heading {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls-ac);
+    padding-bottom: var(--scale-12);
+    margin-bottom: var(--scale-32);
+  }
+  .big-feature-text {
+    font-size: var(--font-16);
+    line-height: var(--font-16-lh);
+    letter-spacing: var(--font-16-ls);
+    margin-bottom: var(--scale-48);
   }
 }
 
