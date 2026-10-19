@@ -3146,6 +3146,8 @@ Contact Block (Independent)
 /* Min-width for extra lagre */ 
 @media (min-width: 4096px) {
   .footer-content {
+    height: 80vh;
+    
     width: 100%;
     flex: 1;
   }
@@ -3200,45 +3202,111 @@ Contact Block (Independent)
 
 @media (max-width: 4096px) {
   .footer-content {
+    height: 80vh;
+    
     width: 100%;
     flex: 1;
   }
   /* DESKTOP: */
   .footer-logo {
-    margin-right: calc(var(--global-spacing-lr) * 1.5);
+    margin-right: calc(var(--global-spacing-lr) * 2);
   }
   .footer-logo img {
-    width: calc(var(--scale-1) * 240);
+    width: calc(var(--scale-1) * 144);
   }
-  
+
 /* Margin after first block */ 
   .footer-info-block:first-child {
-    margin-right: calc(var(--global-spacing-lr) * 0.75);
+    margin-right: var(--global-spacing-lr);
   }
 
   .footer-info-block .footer-heading {
-    margin-bottom: var(--scale-20);
+    margin-bottom: var(--scale-16);
     /* font */ 
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls-ac);
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls-ac);
   }
 
   .footer-info-block .footer-text {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls);
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
   }
 
-  .footer-info-block .footer-link {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls);
+  .footer-link {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
   }
+
   .footer-bottom-line .footer-text {
-    font-size: var(--font-16);
-    line-height: var(--font-16-lh);
-    letter-spacing: var(--font-16-ls);
+    font-size: var(--font-12);
+    line-height: var(--font-12-lh);
+    letter-spacing: var(--font-12-ls);
+  }
+
+  .footer-bottom-line {
+    width: calc(var(--scale-1) * 640);
+  }
+  .footer-up-btn {
+    width: calc(var(--scale-1) * 48);
+    height: auto;
+  }
+}
+
+@media (max-width: 2560px) {
+  .footer-content {
+    height: 80vh;
+    
+    width: 100%;
+    flex: 1;
+  }
+  /* DESKTOP: */
+  .footer-logo {
+    margin-right: calc(var(--global-spacing-lr) * 2);
+  }
+  .footer-logo img {
+    width: calc(var(--scale-1) * 144);
+  }
+
+/* Margin after first block */ 
+  .footer-info-block:first-child {
+    margin-right: var(--global-spacing-lr);
+  }
+
+  .footer-info-block .footer-heading {
+    margin-bottom: var(--scale-16);
+    /* font */ 
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls-ac);
+  }
+
+  .footer-info-block .footer-text {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+  }
+
+  .footer-link {
+    font-size: var(--font-14);
+    line-height: var(--font-14-lh);
+    letter-spacing: var(--font-14-ls);
+  }
+
+  .footer-bottom-line .footer-text {
+    font-size: var(--font-12);
+    line-height: var(--font-12-lh);
+    letter-spacing: var(--font-12-ls);
+  }
+
+  .footer-bottom-line {
+    width: calc(var(--scale-1) * 640);
+  }
+  .footer-up-btn {
+    width: calc(var(--scale-1) * 48);
+    height: auto;
   }
 }
 
